@@ -1,0 +1,18 @@
+<?xml version="1.0"?> 
+ <drawfbp_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib/drawfbp_file.xsd">
+<net>
+<desc>Click anywhere on selection area</desc>
+ <complang>Java</complang>
+ <clicktogrid>true</clicktogrid> 
+<sortbydate>false</sortbydate> 
+<blocks><block> <x> 292 </x> <y> 244 </y> <id> 1 </id> <type>B</type> <width>92</width> <height>64</height> <description>ReadJDBC</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 758 </x> <y> 244 </y> <id> 2 </id> <type>B</type> <width>92</width> <height>64</height> <description>Display</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 292 </x> <y> 127 </y> <id> 4 </id> <type>I</type> <width>68</width> <height>28</height> <description>pswdFile</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+</blocks> <connections>
+<connection> <fromx>338</fromx> <fromy>245</fromy> <tox>712</tox> <toy>248</toy> <fromid>1</fromid> <toid>2</toid> <id>1</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>287</fromx> <fromy>141</fromy> <tox>287</tox> <toy>212</toy> <fromid>4</fromid> <toid>1</toid> <id>2</id> <endsatline>false</endsatline><downstreamport>PSWD</downstreamport><segno>0</segno></connection> 
+</connections> </net> </drawfbp_file>

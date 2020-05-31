@@ -1,4 +1,4 @@
-package main.java.com.jpaulmorrison.jdbcstuff.core.components;
+package com.jpaulmorrison.jdbcstuff.core.components;
 
 import java.sql.*;
 
@@ -9,7 +9,7 @@ import com.jpaulmorrison.fbp.core.engine.InputPort;
 import com.jpaulmorrison.fbp.core.engine.OutPort;
 import com.jpaulmorrison.fbp.core.engine.OutputPort;
 import com.jpaulmorrison.fbp.core.engine.Packet;
-import main.java.com.jpaulmorrison.jdbcstuff.resources.layouts.*;
+import com.jpaulmorrison.jdbcstuff.resources.layouts.*;
 
 @ComponentDescription("Reads table from MySQL and outputs result")
 @InPort(value = "PSWD", description = "Password obtained from file", type = String.class)

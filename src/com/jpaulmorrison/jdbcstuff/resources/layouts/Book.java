@@ -1,4 +1,4 @@
-package main.java.com.jpaulmorrison.jdbcstuff.resources.layouts;
+package com.jpaulmorrison.jdbcstuff.resources.layouts;
 
 public class Book {
 	public String title;

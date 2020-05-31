@@ -23,4 +23,6 @@ Run complete.  Time: 0.675 seconds
 Counts: C: 6, D: 7, S: 6, R (non-null): 8, DO: 0
 ~~~~
 
-Thanks to H-C Chua - Nanyang Technological University, Singapore - https://www.ntu.edu.sg/home/ehchua/programming/java/JDBC_Basic.html - for this example!
+where the last two lines are standard JavaFBP output.
+
+Thanks to H-C Chua - Nanyang Technological University, Singapore - https://www.ntu.edu.sg/home/ehchua/programming/java/JDBC_Basic.html - for the original (non-FBP) code for this example!

@@ -1,7 +1,7 @@
 package com.jpaulmorrison.jdbcstuff.networks; //change package name, or delete statement, if desired
 import com.jpaulmorrison.fbp.core.engine.*; 
 public class Step05 extends Network {
-String description = "Click anywhere on selection area";
+String description = "First stage of FBP-ETL development";
 protected void define() { 
   component("ReadJDBC",com.jpaulmorrison.jdbcstuff.core.components.ReadJDBC.class); 
   component("Display",com.jpaulmorrison.fbp.core.components.misc.WriteToConsole.class); 

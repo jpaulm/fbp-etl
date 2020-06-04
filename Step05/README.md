@@ -7,7 +7,7 @@ FBP-ETL
 
 *From https://www.ntu.edu.sg/home/ehchua/programming/java/JDBC_Basic.html - with thanks!*
 
-**price changed from float to BigDecimal**
+**Note: price changed from float to BigDecimal**
 
 Start a MySQL client.  You will also need the MySQL Workbench, and Connector J 8.0 - `mysql-connector-java-8.0.20.jar` .
 

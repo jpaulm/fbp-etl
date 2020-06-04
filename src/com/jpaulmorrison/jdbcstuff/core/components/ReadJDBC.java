@@ -57,7 +57,7 @@ public class ReadJDBC extends Component {
 			        	Book book = new Book(); 
 			            book.title = rset.getString("title");
 			            book.author = rset.getString("author");
-			            book.price = rset.getDouble("price");  
+			            book.price = rset.getBigDecimal("price");  
 			            book.qty   = rset.getInt("qty");
 			            //System.out.println(book.title + ", " + book.author + ", " + book.price + ", " + book.qty);
 			            String outStr = book.title + ", " + book.author + ", " + book.price + ", " + book.qty;

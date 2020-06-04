@@ -21,7 +21,7 @@ create table books (
    id int,
    title varchar(50),
    author varchar(50),
-   price float,
+   price decimal(15,2),
    qty int,
    primary key (id));
  

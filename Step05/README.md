@@ -7,20 +7,9 @@ FBP-ETL
 
 *From https://www.ntu.edu.sg/home/ehchua/programming/java/JDBC_Basic.html - with thanks!*
 
-Start a MySQL client: I shall also assume that there is an authorized user called "myuser" with password "xxxx".
+Start a MySQL client.  You will also need the MySQL Workbench, and Connector J 8.0 - `mysql-connector-java-8.0.20.jar` .
 
-```
-// For Windows: assume that MySQL is installed in "c:\myWebProject\mysql"
-c:
-cd \myWebProject\mysql\bin
-mysql -u myuser -p
- 
-// For macOS: assume that MySQL is installed in "/usr/local/mysql"
-cd /usr/local/mysql/bin
-./mysql -u myuser -p
-```
-
-Run the following SQL statements to create our test database and table.
+Run the following SQL statements to create the test database and table.
 
 ```
 create database if not exists ebookshop;

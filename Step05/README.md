@@ -7,6 +7,8 @@ FBP-ETL
 
 *From https://www.ntu.edu.sg/home/ehchua/programming/java/JDBC_Basic.html - with thanks!*
 
+**price changed from float to BigDecimal**
+
 Start a MySQL client.  You will also need the MySQL Workbench, and Connector J 8.0 - `mysql-connector-java-8.0.20.jar` .
 
 Run the following SQL statements to create the test database and table.
@@ -21,7 +23,7 @@ create table books (
    id int,
    title varchar(50),
    author varchar(50),
-   price decimal(15,2),
+   price decimal(15,2),    
    qty int,
    primary key (id));
  

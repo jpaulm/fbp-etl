@@ -16,8 +16,6 @@ This is a standard format JavaFBP component, with the usual sections:
 - 'execute' method
 - 'openPorts' method
 
-Clearly, only the 'execute' method will be affected by componentizing... unless we add some more IIP ports for additional parameters.
-
 Let us take a look at the 'execute' method - please bring it up in a separate window.
 
 ```
@@ -32,4 +30,14 @@ As you can see (see the diagram above), the password has already been externaliz
 
 **Note that FBP uses the term "port", but the client and server also use the term "port", which in this case has a standard value of `3306`.  In what follows, "port" will be taken to refer to FBP "ports", unless otherwise specified.** 
 
-In the Connection statement above, we suggest that all the parts be obtained from different input ports, with database name and user name perhaps being in IIPs.  Of course, FBP allows them to be obtained from any source.  The diagram now bvecomes the following: 
+In the Connection statement above, we suggest that all the parts be obtained from different input ports, with database name and user name perhaps being in IIPs.  Of course, FBP allows them to be obtained from any source.  The diagram now becomes the following: 
+
+![Starting to componentize](https://github.com/jpaulm/fbp-etl/blob/master/Step08/docs/Step08.png "Starting to componentize ReadJDBC")
+
+Note that the password is coming in from a file, while the other two parameters are in IIPs - as far as the network is concerned.  Of course `ReadJDBC` doesn't care - the designer is free to obtain these three parameters from any source s/he likes...  We (the network designer) decided to put the password in a separate file simply to provide better security...  We could for instance insert an encryption component between the ReadFile process and ReadJDBC.
+
+We now have to update `ReadJDBC.java` to receive from the additional input ports.  Since `ReadJDBC.java` will be going through a number of iterations, we will put successive versions in the appropriate `code` directory for a given `Stepxx` directory.
+
+Updating `ReadJDBC.java`, up to this point, is very straightforward, as we just have to add two annotations, two `openInput` calls, and the logic to `receive` the additional inputs. One glitch: if you have more than one `@InPort` annotation, they have to be surrounded with an `@InPorts` annotation.  See https://github.com/jpaulm/fbp-etl/blob/master/Step08/code/components/ReadJDBC.java .
+
+The output of the run is of course exactly the same as in `Step05`.

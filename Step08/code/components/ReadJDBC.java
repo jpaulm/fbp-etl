@@ -16,6 +16,7 @@ import com.jpaulmorrison.jdbcstuff.resources.layouts.*;
 @InPort(value = "DATABASE", description = "Database name", type = String.class),
 @InPort(value = "USER", description = "User name", type = String.class),
 @InPort(value = "PSWD", description = "Password obtained from file", type = String.class)})
+
 @OutPort(value = "OUT", description = "Table rows", type = String.class)
 
 public class ReadJDBC extends Component {

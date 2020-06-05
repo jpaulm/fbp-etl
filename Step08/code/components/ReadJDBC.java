@@ -39,13 +39,13 @@ public class ReadJDBC extends Component {
 		drop(pp);
 		pswdPort.close();
 		
-		Packet<?> pp = dBNPort.receive();
+		pp = dBNPort.receive();
 		
 		String database = (String) pp.getContent();
 		drop(pp);
 		dBNPort.close();
 		
-		Packet<?> pp = userPort.receive();
+		pp = userPort.receive();
 		
 		String user = (String) pp.getContent();
 		drop(pp);

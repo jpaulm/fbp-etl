@@ -1,13 +1,13 @@
 FBP-ETL
 =======
 
-#### ETL (Extract-Transform-Load) framework based on JavaFBP
+#### Componentizing ReadJDBC.java
 
-## First Stage Diagram
+## Diagram from First Stage
 
 ![Display MySQL Table](https://github.com/jpaulm/fbp-etl/blob/master/Step05/docs/Step05.png "First stage")
 
-##"Componentizing" ReadJDBC.java
+## "Componentizing" ReadJDBC.java
      
 This is a standard format JavaFBP component, with the usual sections:
 
@@ -28,6 +28,8 @@ Let us take a look at the 'execute' method - please bring it up in a separate wi
 	    // The format is: "jdbc:mysql://hostname:port/databaseName", "username", "password"		               
 ```
 
-As you can see (by looking at the diagram), the password has already been externalized by putting it in a file, and reading it into a separate (JavaFBP) input port.  
+As you can see (see the diagram above), the password has already been externalized by putting it in a file, and reading the contents into a separate (JavaFBP) input port.  
 
-Note that FBP uses the term "port", but the client and server also use the term "port", which in this casee has a standard value of `3306`.  In what follows, "port" will be taken to refer to FBP "ports", unless otherwise specified. 
+**Note that FBP uses the term "port", but the client and server also use the term "port", which in this case has a standard value of `3306`.  In what follows, "port" will be taken to refer to FBP "ports", unless otherwise specified.** 
+
+In the Connection statement above, we suggest that all the parts be obtained from different input ports, with database name and user name perhaps being in IIPs.  Of course, FBP allows them to be obtained from any source.  The diagram now bvecomes the following: 

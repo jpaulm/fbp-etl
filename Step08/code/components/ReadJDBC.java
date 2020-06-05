@@ -12,10 +12,11 @@ import com.jpaulmorrison.fbp.core.engine.Packet;
 import com.jpaulmorrison.jdbcstuff.resources.layouts.*;
 
 @ComponentDescription("Reads table from MySQL and outputs result")
-@InPorts({)
+@InPorts({
 @InPort(value = "DATABASE", description = "Database name", type = String.class),
 @InPort(value = "USER", description = "User name", type = String.class),
 @InPort(value = "PSWD", description = "Password obtained from file", type = String.class)})
+
 @OutPort(value = "OUT", description = "Table rows", type = String.class)
 
 public class ReadJDBC extends Component {

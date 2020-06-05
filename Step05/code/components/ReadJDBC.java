@@ -5,7 +5,6 @@ import java.sql.*;
 import com.jpaulmorrison.fbp.core.engine.Component;  // Using 'Connection', 'Statement' and 'ResultSet' classes in java.sql package
 import com.jpaulmorrison.fbp.core.engine.ComponentDescription;
 import com.jpaulmorrison.fbp.core.engine.InPort;
-import com.jpaulmorrison.fbp.core.engine.InPorts;
 import com.jpaulmorrison.fbp.core.engine.InputPort;
 import com.jpaulmorrison.fbp.core.engine.OutPort;
 import com.jpaulmorrison.fbp.core.engine.OutputPort;
@@ -13,10 +12,7 @@ import com.jpaulmorrison.fbp.core.engine.Packet;
 import com.jpaulmorrison.jdbcstuff.resources.layouts.*;
 
 @ComponentDescription("Reads table from MySQL and outputs result")
-@InPorts({ 
-@InPort(value = "DATABASE", description = "Database name", type = String.class),
-@InPort(value = "USER", description = "User name", type = String.class),
-@InPort(value = "PSWD", description = "Password obtained from file", type = String.class)})
+@InPort(value = "PSWD", description = "Password obtained from file", type = String.class)
 @OutPort(value = "OUT", description = "Table rows", type = String.class)
 
 public class ReadJDBC extends Component {
@@ -27,8 +23,6 @@ public class ReadJDBC extends Component {
 	  private OutputPort outPort;
 
 	  private InputPort pswdPort;
-	  private InputPort dBNPort;
-	  private InputPort userPort;
 
 	@Override
 	protected void execute() throws Exception {
@@ -39,24 +33,11 @@ public class ReadJDBC extends Component {
 		drop(pp);
 		pswdPort.close();
 		
-		pp = dBNPort.receive();
-		
-		String database = (String) pp.getContent();
-		drop(pp);
-		dBNPort.close();
-		
-		pp = userPort.receive();
-		
-		String user = (String) pp.getContent();
-		drop(pp);
-		userPort.close();
-		
 	      try (
 			         // Step 1: Allocate a database 'Connection' object
 			         Connection conn = DriverManager.getConnection(
-			               //"jdbc:mysql://localhost:3306/ebookshop?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
-			               //"root", pswd);   // For MySQL only
-			        		database + "?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC", user, pswd); 
+			               "jdbc:mysql://localhost:3306/ebookshop?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
+			               "root", pswd);   // For MySQL only
 			               // The format is: "jdbc:mysql://hostname:port/databaseName", "username", "password"
 			 
 			         // Step 2: Allocate a 'Statement' object in the Connection
@@ -93,8 +74,6 @@ public class ReadJDBC extends Component {
 	@Override
 	protected void openPorts() {
 		  pswdPort = openInput("PSWD");
-		  userPort = openInput("USER");
-		  dBNPort = openInput("DATABASE");
-		  outPort = openOutput("OUT");		
+		    outPort = openOutput("OUT");		
 	}
 }

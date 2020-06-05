@@ -5,7 +5,6 @@ import java.sql.*;
 import com.jpaulmorrison.fbp.core.engine.Component;  // Using 'Connection', 'Statement' and 'ResultSet' classes in java.sql package
 import com.jpaulmorrison.fbp.core.engine.ComponentDescription;
 import com.jpaulmorrison.fbp.core.engine.InPort;
-import com.jpaulmorrison.fbp.core.engine.InPorts;
 import com.jpaulmorrison.fbp.core.engine.InputPort;
 import com.jpaulmorrison.fbp.core.engine.OutPort;
 import com.jpaulmorrison.fbp.core.engine.OutputPort;
@@ -13,7 +12,7 @@ import com.jpaulmorrison.fbp.core.engine.Packet;
 import com.jpaulmorrison.jdbcstuff.resources.layouts.*;
 
 @ComponentDescription("Reads table from MySQL and outputs result")
-@InPorts({ 
+@InPorts({)
 @InPort(value = "DATABASE", description = "Database name", type = String.class),
 @InPort(value = "USER", description = "User name", type = String.class),
 @InPort(value = "PSWD", description = "Password obtained from file", type = String.class)})
@@ -39,13 +38,13 @@ public class ReadJDBC extends Component {
 		drop(pp);
 		pswdPort.close();
 		
-		pp = dBNPort.receive();
+		Packet<?> pp = dBNPort.receive();
 		
 		String database = (String) pp.getContent();
 		drop(pp);
 		dBNPort.close();
 		
-		pp = userPort.receive();
+		Packet<?> pp = userPort.receive();
 		
 		String user = (String) pp.getContent();
 		drop(pp);

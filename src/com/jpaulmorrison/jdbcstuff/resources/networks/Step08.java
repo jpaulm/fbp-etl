@@ -1,6 +1,7 @@
-package com.jpaulmorrison.jdbcstuff.networks; //change package name, or delete statement, if desired
+package com.jpaulmorrison.jdbcstuff.resources.networks;
+
 import com.jpaulmorrison.fbp.core.engine.*; 
-public class Step05 extends Network {
+public class Step08 extends Network {
 String description = "First stage of FBP-ETL development";
 protected void define() { 
   component("ReadJDBC",com.jpaulmorrison.jdbcstuff.core.components.ReadJDBC.class); 
@@ -9,8 +10,10 @@ protected void define() {
   connect(component("ReadJDBC"), port("OUT"), component("Display"), port("IN")); 
   initialize("C:/Users/Paul/Documents/jdbc-pswdfile", component("Read__pswd"), port("SOURCE")); 
   connect(component("Read__pswd"), port("OUT"), component("ReadJDBC"), port("PSWD")); 
+  initialize("jdbc:mysql://localhost:3306/ebookshop", component("ReadJDBC"), port("DATABASE")); 
+  initialize("root", component("ReadJDBC"), port("USER")); 
 } 
 public static void main(String[] argv) throws Exception  { 
-  new Step05().go(); 
+  new Step08().go(); 
 } 
 }

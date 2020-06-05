@@ -3,26 +3,31 @@ FBP-ETL
 
 #### ETL (Extract-Transform-Load) framework based on JavaFBP
 
-## First stage in package evolution
+## First Stage Diagram
 
 ![Display MySQL Table](https://github.com/jpaulm/fbp-etl/blob/master/Step05/docs/Step05.png "First stage")
 
-This is a running program - at this stage, most of the required info is hard-wired (except, obviously, for the password).
+##"Componentizing" ReadJDBC.java
+     
+This is a standard format JavaFBP component, with the usual sections:
 
-The output is as follows:
+- imports
+- port attributes
+- 'execute' method
+- 'openPorts' method
 
-~~~~
-The records selected are:
-Total number of records = 5
-Java for dummies, Tan Ah Teck, 11.11, 11
-More Java for dummies, Tan Ah Teck, 22.22, 22
-More Java for more dummies, Mohammad Ali, 33.33, 33
-A Cup of Java, Kumar, 44.44, 44
-A Teaspoon of Java, Kevin Jones, 55.55, 55
-Run complete.  Time: 0.675 seconds
-Counts: C: 6, D: 7, S: 6, R (non-null): 8, DO: 0
-~~~~
+Clearly, only the 'execute' method will be affected by componentizing... unless we add some more IIP ports for additional parameters.
 
-where the last two lines are standard JavaFBP output.
+Let us take a look at the 'execute' method - please bring it up in a separate window.
 
-Thanks to H-C Chua - Nanyang Technological University, Singapore - https://www.ntu.edu.sg/home/ehchua/programming/java/JDBC_Basic.html - for the original (non-FBP) code for this example!
+```
+ // Step 1: Allocate a database 'Connection' object
+	   Connection conn = DriverManager.getConnection(
+		               "jdbc:mysql://localhost:3306/ebookshop?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
+		               "root", pswd);   	
+	    // The format is: "jdbc:mysql://hostname:port/databaseName", "username", "password"		               
+```
+
+As you can see (by looking at the diagram), the password has already been externalized by putting it in a file, and reading it into a separate (JavaFBP) input port.  
+
+Note that FBP uses the term "port", but the client and server also use the term "port", which in this casee has a standard value of `3306`.  In what follows, "port" will be taken to refer to FBP "ports", unless otherwise specified. 

@@ -12,7 +12,7 @@ import com.jpaulmorrison.fbp.core.engine.Packet;
 import com.jpaulmorrison.jdbcstuff.resources.layouts.*;
 
 @ComponentDescription("Reads table from MySQL and outputs result")
-@InPorts({)
+@InPorts({
 @InPort(value = "DATABASE", description = "Database name", type = String.class),
 @InPort(value = "USER", description = "User name", type = String.class),
 @InPort(value = "PSWD", description = "Password obtained from file", type = String.class)})
@@ -38,13 +38,13 @@ public class ReadJDBC extends Component {
 		drop(pp);
 		pswdPort.close();
 		
-		Packet<?> pp = dBNPort.receive();
+		pp = dBNPort.receive();
 		
 		String database = (String) pp.getContent();
 		drop(pp);
 		dBNPort.close();
 		
-		Packet<?> pp = userPort.receive();
+		pp = userPort.receive();
 		
 		String user = (String) pp.getContent();
 		drop(pp);

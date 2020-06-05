@@ -34,7 +34,7 @@ In the Connection statement above, we suggest that all the parts be obtained fro
 
 ![Starting to componentize](https://github.com/jpaulm/fbp-etl/blob/master/Step08/docs/Step08.png "Starting to componentize ReadJDBC")
 
-Note that the password is coming in from a file, while the other two parameters are in IIPs - as far as the network is concerned.  Of course `ReadJDBC` doesn't care - this distinction is intended simply to provide better security...
+Note that the password is coming in from a file, while the other two parameters are in IIPs - as far as the network is concerned.  Of course `ReadJDBC` doesn't care - the designer is free to obtain these three parameters from any source s/he likes...  We (the network designer) decided to put the password in a separate file simply to provide better security...  We could for instance insert an encryption component between the ReadFile process and ReadJDBC.
 
 We now have to update `ReadJDBC.java` to receive from the additional input ports.  Since `ReadJDBC.java` will be going through a number of iterations, we will put successive versions in the appropriate `code` directory for a given `Stepxx` directory.
 

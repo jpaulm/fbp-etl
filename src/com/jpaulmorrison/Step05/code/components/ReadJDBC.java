@@ -1,4 +1,4 @@
-package com.jpaulmorrison.jdbcstuff.core.components;
+package com.jpaulmorrison.Step05.code.components;
 
 import java.sql.*;
 

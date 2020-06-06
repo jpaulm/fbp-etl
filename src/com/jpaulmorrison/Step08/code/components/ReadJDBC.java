@@ -1,4 +1,4 @@
-package com.jpaulmorrison.jdbcstuff.core.components;
+package com.jpaulmorrison.Step08.code.components;
 
 import java.sql.*;
 
@@ -64,15 +64,15 @@ public class ReadJDBC extends Component {
 			      ) {
 			         // Step 3: Execute a SQL SELECT query. The query result is returned in a 'ResultSet' object.
 			         String strSelect = "select title, author, price, qty from books";
-			         //System.out.println("The SQL statement is: \"" + strSelect + "\"\n"); // Echo For debugging
-			         outPort.send(create("The SQL statement is: \"" + strSelect + "\"\n")); // Echo For debugging
+			         System.out.println("The SQL statement is: \"" + strSelect + "\"\n"); // Echo For debugging
+			         //outPort.send(create("The SQL statement is: \"" + strSelect + "\"\n")); // Echo For debugging
 			 
 			         ResultSet rset = stmt.executeQuery(strSelect);
 			 
 			         // Step 4: Process the ResultSet by scrolling the cursor forward via next().
 			         //  For each row, retrieve the contents of the cells with getXxx(columnName).
 			         //System.out.println("The records selected are:");
-			         outPort.send(create("The records selected are:"));
+			         //outPort.send(create("The records selected are:"));
 			         int rowCount = 0;
 			         while(rset.next()) {   // Move the cursor to the next row, return false if no more row
 			        	Book book = new Book(); 
@@ -85,8 +85,8 @@ public class ReadJDBC extends Component {
 			            outPort.send(create(outStr));
 			            ++rowCount;
 			         }
-			         //System.out.println("Total number of records = " + rowCount);
-			         outPort.send(create("Total number of records = " + rowCount));
+			         System.out.println("Total number of records = " + rowCount);
+			         //outPort.send(create("Total number of records = " + rowCount));
 			 
 			      } catch(SQLException ex) {
 			         ex.printStackTrace();

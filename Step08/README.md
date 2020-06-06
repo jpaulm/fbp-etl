@@ -41,3 +41,11 @@ We now have to update `ReadJDBC.java` to receive from the additional input ports
 Updating `ReadJDBC.java`, up to this point, is very straightforward, as we just have to add two annotations, two `openInput` calls, and the logic to `receive` the additional inputs. One glitch: if you have more than one `@InPort` annotation, they have to be surrounded with an `@InPorts` annotation.  See https://github.com/jpaulm/fbp-etl/blob/master/Step08/code/components/ReadJDBC.java .
 
 The output of the run is of course exactly the same as in `Step05`.
+
+## Change display process to ShowText
+
+This is a minor change: JavaFBP ShowText uses the JavaSwing JFrame class, so the output appears in a separate window.  ShowText also requires a title, specied in an IIP attached to its `TITLE` port.  The revised diagram is now as follows:
+
+![Converted to ShowText](https://github.com/jpaulm/fbp-etl/blob/master/Step08/docs/Step08-2.png "Converted to ShowText")
+
+This diagram was used to generate a network, which was then run - with the selected rows appearing in a separate window.

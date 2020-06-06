@@ -11,3 +11,5 @@ The various phases will be designated `Stepxx`, but they will not necessarily ha
 
 [Step05 - First phase - little externalization](Step05/)
 
+[Step08- Componentizing ReadJDBC.java](Step08/)
+

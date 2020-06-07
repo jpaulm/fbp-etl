@@ -13,3 +13,5 @@ The various phases will be designated `Stepxx`, but they will not necessarily ha
 
 [Step08 - Componentizing ReadJDBC.java](src/com/jpaulmorrison/Step08/)
 
+[Step10 - Componentizing ReadJDBC.java (2)](src/com/jpaulmorrison/Step10/)
+

@@ -1,7 +1,6 @@
 FBP-ETL
 =======
 
-#### Componentizing ReadJDBC.java
 
 ## Diagram from First Stage
 

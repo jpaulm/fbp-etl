@@ -5,7 +5,7 @@ FBP-ETL
 
 ## Diagram from First Stage
 
-![Display MySQL Table](https://github.com/jpaulm/fbp-etl/blob/master/Step05/docs/Step05.png "First stage")
+![Display MySQL Table](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step05/docs/Step05.png "First stage")
 
 ## "Componentizing" ReadJDBC.java
      

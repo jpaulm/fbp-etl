@@ -52,7 +52,7 @@ This diagram was used to generate a network, which was then run - with the selec
 
 If you take a closer look, you will notice that the two lines "The SQL statement is..." and "Total number of records..." are separated from the output of the MySQL `select` statement, so that the former appear on the debugging console. 
 
-Combining these outputs into one image, this will look roughly as follows:
+Combining these outputs into one image, this will look roughly as follows (I have put a border around this extracted diagram for reading ease):
 
 ![Combined Output](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step08/docs/Step08-3.png "Combined Output")
 

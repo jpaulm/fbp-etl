@@ -32,7 +32,7 @@ As you can see (see the diagram above), the password has already been externaliz
 
 In the Connection statement above, we suggest that all the parts be obtained from different input ports, with database name and user name perhaps being in IIPs.  Of course, FBP allows them to be obtained from any source.  The diagram now becomes the following: 
 
-![Starting to componentize](https://github.com/jpaulm/fbp-etl/blob/master/Step08/docs/Step08.png "Starting to componentize ReadJDBC")
+![Starting to componentize](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step08/docs/Step08.png "Starting to componentize ReadJDBC")
 
 Note that the password is coming in from a file, while the other two parameters are in IIPs - as far as the network is concerned.  Of course `ReadJDBC` doesn't care - the designer is free to obtain these three parameters from any source s/he likes...  We (the network designer) decided to put the password in a separate file simply to provide better security...  We could for instance insert an encryption component between the ReadFile process and ReadJDBC.
 
@@ -46,7 +46,13 @@ The output of the run is of course exactly the same as in `Step05`.
 
 This is a minor change: JavaFBP ShowText uses the JavaSwing JFrame class, so the output appears in a separate window.  ShowText also requires a title, specified in an IIP attached to its `TITLE` port.  The revised diagram is now as follows:
 
-![Converted to ShowText](https://github.com/jpaulm/fbp-etl/blob/master/Step08/docs/Step08-2.png "Converted to ShowText")
+![Converted to ShowText](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step08/docs/Step08-2.png "Converted to ShowText")
 
 This diagram was used to generate a network, which was then run - with the selected rows appearing in a separate window.
+
+If you take a closer look, you will notice that the two lines "The SQL statement is..." and "Total number of records..." are separated from the output of the MySQL `select` statement, so that the former appear on the debugging console. 
+
+Combining these outputs into one image, this will look roughly as follows:
+
+![Combined Output](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step08/docs/Step08-3.png "Combined Output")
 

@@ -9,7 +9,7 @@ The various phases will be designated `Stepxx`, but they will not necessarily ha
 
 ## Steps
 
-[Step05 - First phase - little externalization](Step05/)
+[Step05 - First phase - little externalization](src/com/jpaulmorrison/Step05/)
 
-[Step08- Componentizing ReadJDBC.java](Step08/)
+[Step08 - Componentizing ReadJDBC.java](src/com/jpaulmorrison/Step08/)
 

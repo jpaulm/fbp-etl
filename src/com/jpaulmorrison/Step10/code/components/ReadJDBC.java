@@ -1,4 +1,4 @@
-package com.jpaulmorrison.Step08.code.components;
+package com.jpaulmorrison.Step10.code.components;
 
 import java.sql.*;
 
@@ -41,7 +41,7 @@ public class ReadJDBC extends Component {
 		
 		pp = dBNPort.receive();
 		
-		String database = (String) pp.getContent();
+		String dbTable = (String) pp.getContent();
 		drop(pp);
 		dBNPort.close();
 		
@@ -51,19 +51,23 @@ public class ReadJDBC extends Component {
 		drop(pp);
 		userPort.close();
 		
+		String[] iipContents = dbTable.split("!", 2); 
+		
 	      try (
+	    		    
 			         // Step 1: Allocate a database 'Connection' object
 			         Connection conn = DriverManager.getConnection(
 			               //"jdbc:mysql://localhost:3306/ebookshop?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
 			               //"root", pswd);   // For MySQL only
-			        		database + "?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC", user, pswd); 
+			        		
+			        		iipContents[0] + "?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC", user, pswd); 
 			               // The format is: "jdbc:mysql://hostname:port/databaseName", "username", "password"
 			 
 			         // Step 2: Allocate a 'Statement' object in the Connection
 			         Statement stmt = conn.createStatement();
 			      ) {
 			         // Step 3: Execute a SQL SELECT query. The query result is returned in a 'ResultSet' object.
-			         String strSelect = "select title, author, price, qty from books";
+			         String strSelect = "select title, author, price, qty from " + iipContents[1];
 			         System.out.println("The SQL statement is: \"" + strSelect + "\"\n"); // Echo For debugging
 			         //outPort.send(create("The SQL statement is: \"" + strSelect + "\"\n")); // Echo For debugging
 			 

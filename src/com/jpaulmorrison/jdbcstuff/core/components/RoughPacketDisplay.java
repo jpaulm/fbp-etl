@@ -59,6 +59,7 @@ import com.jpaulmorrison.fbp.core.engine.Component;
 		  String str = "";
 		  String delim = "";
 		  Object value = null;
+		  str = o.getClass().getName() + "{";
 		  for (Field field : o.getClass().getDeclaredFields()) {
 			    field.setAccessible(true); // ???
 			    
@@ -70,10 +71,11 @@ import com.jpaulmorrison.fbp.core.engine.Component;
 				} 
 			    if (value != null) {
 			        //System.out.println(field.getName() + "=" + value);
-			    	str += delim + value;
-			    	delim = ",";
+			    	str += delim + field.getName() + ":" + value;
+			    	delim = "; ";
 			    }
 			}
+		  str += "}";
 		  System.out.println(str);
 	  }
 	  

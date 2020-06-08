@@ -18,10 +18,7 @@ Let us take a look at steps 2 and 3 of the 'execute' method.
    // Step 3: Execute a SQL SELECT query. The query result is returned in a 'ResultSet' object.
    String strSelect = "select title, author, price, qty from <bold>books</bold>";
    ResultSet rset = stmt.executeQuery(strSelect);
-			 
-          
 ```
-
 As we described in Step08, the database name and user ID have been externalized into IIPs.  The table name (`books`) is in the `select` statement above (highlighted), so we will append that to the database name IIP, separated by an exclamation mark, and ReadJDBC will be modified to split this IIP for the two usages.   See  
 
 It doesn't make sense to turn `Book` into a Java `String`, as we don't know what the next process in the network will be, plus we will probably want to update a table or tables on the output end, so the Book object should be output unchanged.  At this stage, therefore, we will need a process to turn `Book` into `String`, as shown in the diagram below (the component name hasn't been filled in as e don't yet know what we will be using here). 

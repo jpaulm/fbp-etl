@@ -28,5 +28,7 @@ So, at this stage, we will need a process to turn `Book` into `String`, as shown
 
 ![Next Phase](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step10/docs/Step10.png "Next phase")  
 
+We have built a component called `RoughPacketDisplay.java` which implements the first of these suggestions, and can be found in https://github.com/jpaulm/fbp-etl/tree/master/src/com/jpaulmorrison/jdbcstuff .  The output of `ReadJDBC.java` and the input of `RoughPacketDisplay.java` can no longer assume java Strings, so this has been removed from their annotations.
+
 
 

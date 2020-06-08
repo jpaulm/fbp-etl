@@ -20,8 +20,8 @@ Let us take a look at the 'execute' method - please bring it up in a separate wi
 ```
  // Step 1: Allocate a database 'Connection' object
 	   Connection conn = DriverManager.getConnection(
-		               "jdbc:mysql://localhost:3306/ebookshop?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
-		               "root", pswd);   	
+		"jdbc:mysql://localhost:3306/ebookshop?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC",
+		"root", pswd);   	
 	    // The format is: "jdbc:mysql://hostname:port/databaseName", "username", "password"		               
 ```
 

@@ -1,13 +1,11 @@
-FBP-ETL
+FBP-ETL -  ETL (Extract-Transform-Load) framework based on JavaFBP
 =======
-
-#### ETL (Extract-Transform-Load) framework based on JavaFBP
 
 ## Set up test database and table
 
 *From https://www.ntu.edu.sg/home/ehchua/programming/java/JDBC_Basic.html - with thanks!*
 
-**Note: price changed from float to BigDecimal**
+**Note: price changed from float in above example to BigDecimal**
 
 Start a MySQL client.  You will also need the MySQL Workbench, and Connector J 8.0 - `mysql-connector-java-8.0.20.jar` .
 

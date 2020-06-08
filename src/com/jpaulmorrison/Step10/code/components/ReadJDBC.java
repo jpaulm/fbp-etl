@@ -85,8 +85,9 @@ public class ReadJDBC extends Component {
 			            book.price = rset.getBigDecimal("price");  
 			            book.qty   = rset.getInt("qty");
 			            //System.out.println(book.title + ", " + book.author + ", " + book.price + ", " + book.qty);
-			            String outStr = book.title + ", " + book.author + ", " + book.price + ", " + book.qty;
-			            outPort.send(create(outStr));
+			            //String outStr = book.title + ", " + book.author + ", " + book.price + ", " + book.qty;
+			            //outPort.send(create(outStr));
+			            outPort.send(create(book));
 			            ++rowCount;
 			         }
 			         System.out.println("Total number of records = " + rowCount);

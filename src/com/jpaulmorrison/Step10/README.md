@@ -34,5 +34,3 @@ Here is the output:
 
 ![Output of RoughPacketDisplay](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step10/docs/Step10-2.png "Output of RoughPacketDisplay")
 
-
-

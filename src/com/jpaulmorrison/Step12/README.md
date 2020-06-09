@@ -56,6 +56,12 @@ We therefore have:
 Now `price` should not be a simple arithmetic type, as it is currency, and should specify the currency denomination.  Now it is very easy to assume that a price is in whatever currency we use in our home country, and we have all been doing this for decades, but this is not adequate for a worldwide marketplace - see https://jpaulm.github.io/busdtyps.html .  This in turn means that its type on the database would in fact be `VARCHAR`, and its type in `Book` would be `Currency`.  We will be talking about this in a later step.
 
 The table field types will be a given (there will even be people designing tables that use `float` or `double` for currency amounts - I don't know how to prevent this!).  The class definitions are up to the application designer, so we have more leeway here.
+
+Now, just as Java reflection allows you to obtain metadata, MySQL supports metadata about the columns in a table.  There is no particular reason for ReadJDBC to obtain less than all the columns, so we can change the `select` statement to retrieve all the columns, and use the MySQL metadata to get names and descriptions for them.
+
+Here is some sample output (including the `select` statement):
+
+![Column metadata](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step12/docs/Step12-2.png "Column metadata")
  
                                                                                               
 

@@ -1,4 +1,4 @@
-package com.jpaulmorrison.Step10.code.components;
+package com.jpaulmorrison.Step12.code.components;
 
 import java.sql.*;
 
@@ -32,6 +32,8 @@ public class ReadJDBC extends Component {
 
 	@Override
 	protected void execute() throws Exception {
+		
+		
 		
 		Packet<?> pp = pswdPort.receive();
 		
@@ -67,11 +69,14 @@ public class ReadJDBC extends Component {
 			         Statement stmt = conn.createStatement();
 			      ) {
 			         // Step 3: Execute a SQL SELECT query. The query result is returned in a 'ResultSet' object.
-			         String strSelect = "select title, author, price, qty from " + iipContents[1];
+			         //String strSelect = "select title, author, price, qty from " + iipContents[1];
+			         String strSelect = "select * from " + iipContents[1];
 			         System.out.println("The SQL statement is: \"" + strSelect + "\"\n"); // Echo For debugging
 			         //outPort.send(create("The SQL statement is: \"" + strSelect + "\"\n")); // Echo For debugging
 			 
 			         ResultSet rset = stmt.executeQuery(strSelect);
+			         
+			         listColumnInfo(rset); 
 			 
 			         // Step 4: Process the ResultSet by scrolling the cursor forward via next().
 			         //  For each row, retrieve the contents of the cells with getXxx(columnName).
@@ -98,6 +103,23 @@ public class ReadJDBC extends Component {
 			      }  // Step 5: Close conn and stmt - Done automatically by try-with-resources (JDK 7)
 	}
 
+	void listColumnInfo(ResultSet rset){
+		ResultSetMetaData rsmd;
+		int numberOfColumns;
+		try {
+			rsmd = rset.getMetaData();
+			numberOfColumns = rsmd.getColumnCount();
+			for (int i = 1; i <= numberOfColumns; i++) {
+				System.out.println(rsmd.getColumnName(i) + " " +  
+				    rsmd.getColumnTypeName(i));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	     
+	}
+	
 	@Override
 	protected void openPorts() {
 		  pswdPort = openInput("PSWD");

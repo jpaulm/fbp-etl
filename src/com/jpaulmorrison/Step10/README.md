@@ -31,6 +31,8 @@ For now, we will still list the table rows (on the console), but it doesn't make
 
 We have built a component called `WriteObjectsToConsole.java` which implements the latter suggestion - it took about 20 minutes to write!  It can be found in https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/jdbcstuff/core/components/WriteObjectsToConsole.java, and replaces `WriteToConsole` in the diagram.  The output of `ReadJDBC.java` can no longer assume Java Strings, so this restriction has been removed from the `@OutPort` annotation.
 
+`WriteObjectsToConsole` also outputs incoming IPs if an output port is connected.
+
 Here is the updated diagram:
 
 ![Updated Diagram](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step10/docs/Step10-2.png "Updated Diagram")

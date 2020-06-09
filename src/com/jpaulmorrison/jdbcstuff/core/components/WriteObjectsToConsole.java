@@ -22,7 +22,7 @@ import com.jpaulmorrison.fbp.core.engine.Component;
 	 */
 	@ComponentDescription("Write stream of packets to console")
 	@InPort(value = "IN", description = "Packets to be displayed")
-	@OutPort(value = "OUT", optional = true, description = "Output port, if connected", type = String.class)
+	@OutPort(value = "OUT", optional = true, description = "Output port, if connected")
 	@MustRun
 	public class WriteObjectsToConsole extends Component {
 

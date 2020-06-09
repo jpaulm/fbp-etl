@@ -25,13 +25,13 @@ https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step10/code/
 
 For now, we will still list the table rows (on the console), but it doesn't make sense to turn `Book` into a Java `String`, as we don't know what the next process in the network will be, plus we will probably want to update a table or tables on the output end, which will need "book"s unchanged, so the Book object should be output as is.  
 
-`WriteToConsole` cannot accept "book" objects as input, so we will add a process to turn `Book` into `String`, as shown in the diagram below (the component name hasn't been filled in as we don't yet know what we will be using here). We could build an ad hoc component to fill this gap, but in fact we can use reflection to build a generalized component, which not only displays the fields, but also shows their names as well, plus the class name.
+`WriteToConsole` cannot accept "book" objects as input, so we will add a process to turn `Book` into `String`, as shown in the diagram below.  We could build an ad hoc component to fill this gap, but in fact we can use reflection to build a generalized component, which not only displays the fields, but also shows their names as well, plus the class name.
 
 ![Next Phase](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step10/docs/Step10.png "Next phase")  
 
-We have built a component called `WriteObjectsToConsole.java` which implements the latter suggestion - it took about 15 minutes to write!  It can be found in https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/jdbcstuff/core/components/WriteObjectsToConsole.java .  So in the above diagram, the class of the process labelled "Books to Strings" can be taken to be `WriteObjectsToConsole.java`.  The output of `ReadJDBC.java` and the input of `WriteObjectsToConsole.java` can no longer assume Java Strings, so this restriction has been removed from their annotations.
+We have built a component called `WriteObjectsToConsole.java` which implements the latter suggestion - it took about 20 minutes to write!  It can be found in https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/jdbcstuff/core/components/WriteObjectsToConsole.java.  The output of `ReadJDBC.java` and the input of `WriteObjectsToConsole.java` can no longer assume Java Strings, so this restriction has been removed from their annotations.
 
-Here is the output of `WriteObjectsToConsole.java`:
+Here is a sample of the output from `WriteObjectsToConsole.java`:
 
 ![Output of WriteObjectsToConsole.java](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step10/docs/Step10-2.png "Output of WriteObjectsToConsole")
 

@@ -62,6 +62,8 @@ Now, just as Java reflection allows you to obtain metadata, MySQL supports metad
 Here is some sample output (including the `select` statement):
 
 ![Column metadata](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step12/docs/Step12-2.png "Column metadata")
+
+The column types determine the `ResultSet` `getxx()` methods, so we are on our way!
  
                                                                                               
 

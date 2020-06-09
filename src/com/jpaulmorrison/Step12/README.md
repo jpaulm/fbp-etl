@@ -53,7 +53,7 @@ We therefore have:
 
 - 3 `ResultSet` methods, corresponding to the 3 field types
 
-Now `price` should not be a simple arithmetic type, as it is currency, and should specify the currency denomination.  N. Americans tend to assume that a price is in US$, but this is not adequate for a worldwide marketplace - see https://jpaulm.github.io/busdtyps.html .  This in turn means that its type on the database would in fact be `VARCHAR`, and its type in `Book` would be `Currency`.  We will be talking about this in a later Step.
+Now `price` should not be a simple arithmetic type, as it is currency, and should specify the currency denomination.  Now it is very easy to assume that a price is in whatever currency we use in our home country, and we have all been doing this for decades, but this is not adequate for a worldwide marketplace - see https://jpaulm.github.io/busdtyps.html .  This in turn means that its type on the database would in fact be `VARCHAR`, and its type in `Book` would be `Currency`.  We will be talking about this in a later Step.
  
                                                                                               
 

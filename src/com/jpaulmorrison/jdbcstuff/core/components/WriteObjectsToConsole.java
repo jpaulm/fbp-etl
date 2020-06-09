@@ -24,7 +24,7 @@ import com.jpaulmorrison.fbp.core.engine.Component;
 	@InPort(value = "IN", description = "Packets to be displayed")
 	@OutPort(value = "OUT", optional = true, description = "Output port, if connected", type = String.class)
 	@MustRun
-	public class RoughPacketDisplay extends Component {
+	public class WriteObjectsToConsole extends Component {
 
 	  
 	  private InputPort inport;
@@ -59,7 +59,7 @@ import com.jpaulmorrison.fbp.core.engine.Component;
 		  String str = "";
 		  String delim = "";
 		  Object value = null;
-		  str = o.getClass().getName() + "{";
+		  str = o.getClass().getName() + ": {";
 		  for (Field field : o.getClass().getDeclaredFields()) {
 			    field.setAccessible(true); // ???
 			    
@@ -71,7 +71,7 @@ import com.jpaulmorrison.fbp.core.engine.Component;
 				} 
 			    if (value != null) {
 			        //System.out.println(field.getName() + "=" + value);
-			    	str += delim + field.getName() + ":" + value;
+			    	str += delim + field.getName() + ": " + value;
 			    	delim = "; ";
 			    }
 			}

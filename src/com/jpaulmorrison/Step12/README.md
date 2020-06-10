@@ -41,6 +41,10 @@ public class Book {
 }
 ```
 
+To pass this to our generalized component, we will have to add another IIP - see diagram below. 
+
+![Adding class name](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step10/docs/Step10-3.png "Adding class name")
+
 Here is the definition of `books` on the database:
 
 ![Column display](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step12/docs/Step12.png "Column display")

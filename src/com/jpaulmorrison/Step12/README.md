@@ -47,7 +47,7 @@ Here is the definition of `books` on the database:
 
 We therefore have:
 
-- 4 fields spread among 3 types
+- 5 fields spread among 3 types
 
 - 5 table columns, whose types have to be compatible with the field definitions
 
@@ -65,8 +65,8 @@ The column types determine the `ResultSet` `getxx()` methods, so we can use Java
 
 You will notice that, in the code segment above, the Java field names have the same names as the MySQL column names, but we can't rely on this, so I would suggest that the relationships between these - plus any non-standard type information - be held in a JSON file. 
 
-Now `price` should not be a simple arithmetic type, as it is currency, and should specify the currency denomination.  Now it is very easy to assume that a price is in whatever currency we use in our home country, and we have all been doing this for decades, but this is not adequate for a worldwide marketplace - see https://jpaulm.github.io/busdtyps.html .  This in turn means that its type on the database would in fact be `VARCHAR`, and its type in `Book` would be `Currency`.  We will be talking about this in a later step, but it gives an added reason for holding field relationships externally to the component code.  
+Now `price` should not be a simple arithmetic type, as it is currency, and should specify the currency denomination.  It is very easy to assume that a price is in whatever currency we use in our home country, and we have all been doing this for decades in the IT business, but this is not adequate for a worldwide marketplace - see https://jpaulm.github.io/busdtyps.html .  This in turn means that the type of `price` on the database would in fact be `VARCHAR`, and its type in `Book` would be `Currency`.  We will be talking about this in a later step, but it gives an added reason for holding field relationships externally to the component code.  
 
-We will be developing a generalized component based on `ReadJDBC.java`.
+We will be developing a generalized component based on `ReadJDBC.java` - name to be decided later...
                                                                                               
 

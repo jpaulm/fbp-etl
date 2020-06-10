@@ -28,9 +28,9 @@ Let us now take a look at step 4 of the 'execute' method.
      }
 ```
 
-Here is where things start to get complicated (from the point of view of componentization)...!  Partial list of things we have to take care of:
+Here is where things start to get complicated (from the point of view of componentization)...!  
 
-- class named "Book", defined as follows:
+The class involved is named "Book", and is defined as follows:
 
 ```
 public class Book {
@@ -53,17 +53,20 @@ We therefore have:
 
 - 3 `ResultSet` methods, corresponding to the 3 field types
 
-Now `price` should not be a simple arithmetic type, as it is currency, and should specify the currency denomination.  Now it is very easy to assume that a price is in whatever currency we use in our home country, and we have all been doing this for decades, but this is not adequate for a worldwide marketplace - see https://jpaulm.github.io/busdtyps.html .  This in turn means that its type on the database would in fact be `VARCHAR`, and its type in `Book` would be `Currency`.  We will be talking about this in a later step.
-
 The table field types will be a given (there will even be people designing tables that use `float` or `double` for currency amounts - I don't know how to prevent this!).  The class definitions are up to the application designer, so we have more leeway here.
 
-Now, just as Java reflection allows you to obtain metadata, MySQL supports metadata about the columns in a table.  There is no particular reason for ReadJDBC to obtain less than all the columns, so we can change the `select` statement to retrieve all the columns, and use the MySQL metadata to get names and descriptions for them.
+Now, just as Java reflection allows you to obtain metadata, MySQL supports metadata about the columns in a table.  There is no particular reason for ReadJDBC not to obtain all the columns, so we can change the `select` statement to retrieve all columns, and use the MySQL metadata to get names and descriptions for them.
 
-Here is some sample output (including the `select` statement):
+Here is some sample MySQL metadata output (I have included the `select` statement):
 
 ![Column metadata](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step12/docs/Step12-2.png "Column metadata")
-
-The column types determine the `ResultSet` `getxx()` methods, so we are on our way!
  
+The column types determine the `ResultSet` `getxx()` methods, so we can use Java reflection to access the columns.
+
+You will notice that, in the code segment above, the Java field names have the same names as the MySQL column names, but we can't rely on this, so I would suggest that the relationships between these - plus any non-standard type information - be held in a JSON file. 
+
+Now `price` should not be a simple arithmetic type, as it is currency, and should specify the currency denomination.  Now it is very easy to assume that a price is in whatever currency we use in our home country, and we have all been doing this for decades, but this is not adequate for a worldwide marketplace - see https://jpaulm.github.io/busdtyps.html .  This in turn means that its type on the database would in fact be `VARCHAR`, and its type in `Book` would be `Currency`.  We will be talking about this in a later step, but it gives an added reason for holding field relationships externally to the component code.  
+
+We will be developing a generalized component based on `ReadJDBC.java`.
                                                                                               
 

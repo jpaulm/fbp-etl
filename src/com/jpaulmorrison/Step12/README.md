@@ -66,7 +66,7 @@ Here is some sample MySQL metadata output:
 
 ![Column metadata](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step12/docs/Step12-2.png "Column metadata")
  
-The column types determine the `ResultSet` `getxx()` methods, so we can use Java reflection to access the columns.
+The column types determine the `ResultSet` `getxx()` methods, so we can use Java reflection to access the columns, by generating appropriate `getxx()` method invocations.
 
 You will notice that, in the code segment above, the Java field names have the same names as the MySQL column names, but we can't rely on this, so I would suggest that the relationships between these - plus any non-standard type information - be held in a JSON file. 
 

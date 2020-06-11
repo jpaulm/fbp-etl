@@ -69,8 +69,14 @@ The column types determine the `ResultSet` `getxx()` methods, so we can use Java
 
 You will notice that, in the code segment above, the Java field names have the same names as the MySQL column names, but we can't rely on this, so I would suggest that the relationships between these - plus any non-standard type information - be held in a JSON file. 
 
-Now `price` should not be a simple arithmetic type, as it is currency, and should specify the currency denomination.  It is very easy to assume that a price is in whatever currency we use in our home country, and we have all been doing this for decades in the IT business, but this is not adequate for a worldwide marketplace - see https://jpaulm.github.io/busdtyps.html .  This in turn means that the type of `price` on the database would in fact be `VARCHAR`, and its type in `Book` would be `Currency`.  We will be talking about this in a later step, but it gives an added reason for holding field relationships externally to the component code.  
+> Now `price` should not be a simple arithmetic type, as it is currency, and should specify the currency denomination.  It is very easy to   assume that a price is in whatever currency we use in our home country, and we have all been doing this for decades in the IT business, but this is not adequate for a worldwide marketplace - see https://jpaulm.github.io/busdtyps.html .  This in turn means that the type of `price` on the database would in fact be `VARCHAR`, and its type in `Book` would be `Currency`.  We will be talking about this in a later step, but it gives an added reason for holding field relationships externally to the component code.  
 
-We will be developing a generalized component based on `ReadJDBC.java` - name to be decided later...
-                                                                                              
+The latest version of `ReadJDBC.java` is now working. and has table column names as well as object field names factored out. The output is identical to that shown at the bottom of https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step10/README.md .  
 
+The code can be found in https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step12/code/components/ReadJDBC.java - what is interesting about this component is that
+
+- there are no table column names or IP object (`Book`) field names hard-wired in the code
+- it assumes that the number of table columns and object field names *match*, and *are identical*
+- what is (currently) hard-wired is the correspondence between `VARCHAR` and `String`, `DECIMAL` and `BigDecimal`, etc.
+
+Clearly the reader will easily see that these restrictions will not be hard to relax!  As suggested above, these can be addressed by the judicious use of JSON tables.  Stay tuned! 

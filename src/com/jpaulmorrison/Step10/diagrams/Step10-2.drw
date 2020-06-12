@@ -8,12 +8,12 @@ xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib
 <sortbydate>false</sortbydate> 
 <blocks><block> <x> 473 </x> <y> 240 </y> <id> 1 </id> <type>B</type> <width>92</width> <height>64</height> <description>ReadJDBC</description> <blockclassname>C:\Users\Paul\Documents\GitHub\fbp-etl\bin!com.jpaulmorrison.Step08.code.components.ReadJDBC</blockclassname> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
-<block> <x> 206 </x> <y> 139 </y> <id> 4 </id> <type>I</type> <width>348</width> <height>28</height> <description>C:/Users/Paul/Documents/jdbc-pswdfile!books</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+<block> <x> 206 </x> <y> 139 </y> <id> 4 </id> <type>I</type> <width>300</width> <height>28</height> <description>C:/Users/Paul/Documents/jdbc-pswdfile</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
 <block> <x> 201 </x> <y> 240 </y> <id> 5 </id> <type>B</type> <width>92</width> <height>64</height> <description>Read
  pswd</description> <blockclassname>C:\Users\Paul\Documents\GitHub\javafbp\build\libs\javafbp-4.1.3.jar!com.jpaulmorrison.fbp.core.components.io.ReadFile</blockclassname> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
-<block> <x> 434 </x> <y> 64 </y> <id> 6 </id> <type>I</type> <width>300</width> <height>28</height> <description>jdbc:mysql://localhost:3306/ebookshop</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+<block> <x> 434 </x> <y> 64 </y> <id> 6 </id> <type>I</type> <width>348</width> <height>28</height> <description>jdbc:mysql://localhost:3306/ebookshop!books</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
 <block> <x> 264 </x> <y> 368 </y> <id> 7 </id> <type>I</type> <width>36</width> <height>28</height> <description>root</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 

@@ -38,7 +38,9 @@ public class ReadJDBC extends Component {
 	final String colRecodes[][]  = {
 			 {"INT", "getInt" },
 			 {"VARCHAR", "getString"},
-			 {"DECIMAL", "getBigDecimal"}
+			 {"DECIMAL", "getBigDecimal"},
+			 {"FLOAT", "getFloat"},
+			 {"DOUBLE", "getDouble"}
 		};
 
 	

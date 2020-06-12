@@ -80,4 +80,6 @@ The code can be found in https://github.com/jpaulm/fbp-etl/blob/master/src/com/j
 - it assumes that the number of table columns and object field names *are identical*
 - what is (currently) hard-wired is the correspondence between `VARCHAR` and `String`, `DECIMAL` and `BigDecimal`, etc.
 
-Clearly the reader will easily see that these restrictions will not be hard to relax.  As suggested above, these can be addressed by the judicious use of JSON tables.  Stay tuned! 
+This last correspondence has now been "hard-wired" in the code using a 2-dimensional array - this can handle most of the column types, except that fields like Currency (discussed above) will need special treatment.
+
+Clearly the reader will easily see that the first two restrictions should not be too hard to relax.  As suggested above, these can be addressed by the judicious use of JSON tables.  Stay tuned! 

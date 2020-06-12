@@ -34,7 +34,14 @@ public class ReadJDBC extends Component {
 	private InputPort dBNPort;
 	private InputPort userPort;
 	private InputPort classPort;
+	
+	final String colRecodes[][]  = {
+			 {"INT", "getInt" },
+			 {"VARCHAR", "getString"},
+			 {"DECIMAL", "getBigDecimal"}
+		};
 
+	
 	@Override
 	protected void execute() throws Exception {
 
@@ -145,12 +152,16 @@ public class ReadJDBC extends Component {
 					// System.out.println(entry.getKey() + " = " +
 					// entry.getValue());
 					String type = null;
-					if (entry.getValue().equals("VARCHAR"))
-						type = "getString";
-					if (entry.getValue().equals("DECIMAL"))
-						type = "getBigDecimal";
-					if (entry.getValue().equals("INT"))
-						type = "getInt";
+					
+					
+					for (int i = 0; i < colRecodes.length; i++){
+						if (entry.getValue().equals(colRecodes[i][0])){
+							type = colRecodes[i][1];
+							break;
+						}
+							
+					}
+					
 					Class<?>[] cArg = new Class[1];
 					cArg[0] = String.class;
 
@@ -169,7 +180,9 @@ public class ReadJDBC extends Component {
 
 		} catch (SQLException ex) {
 			ex.printStackTrace();
-		} // Step 5: Close conn and stmt - Done automatically by
+		} 
+		
+		// Step 5: Close conn and stmt - Done automatically by
 			// try-with-resources (JDK 7)
 	}
 

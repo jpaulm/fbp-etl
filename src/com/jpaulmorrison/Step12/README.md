@@ -77,7 +77,7 @@ The latest version of `ReadJDBC.java` is now working, and has no knowledge of ta
 The code can be found in https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step12/code/components/ReadJDBC.java - what is interesting about the revised component is that
 
 - there are no table column names or IP object (`Book`) field names hard-wired in the code
-- it assumes that the number of table columns and object field names *are identical*
+- it assumes that the table column names and object field names *are identical*
 - what is (currently) hard-wired is the correspondence between `VARCHAR` and `String`, `DECIMAL` and `BigDecimal`, etc.
 
 This last correspondence has now been "hard-wired" in the code using a 2-dimensional array - this can handle most of the column types, except that fields like Currency (discussed above) will need special treatment.  However, MySQL has a number of data types, which may not correspond one-to-one with the ResultSet `getxx()` methods, so I feel that a better way to handle this is for `ReadJDBC` to have a list of permissible correspondences, and to check "both ends" (the table layout and the Java class layout) against the list.

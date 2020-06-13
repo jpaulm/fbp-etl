@@ -153,12 +153,12 @@ public class ReadJDBC extends Component {
 				for (Map.Entry<String, String> entry : hm.entrySet()) {
 					// System.out.println(entry.getKey() + " = " +
 					// entry.getValue());
-					String type = null;
+					String getMethodName = null;
 					
 					
 					for (int i = 0; i < colRecodes.length; i++){
 						if (entry.getValue().equals(colRecodes[i][0])){
-							type = colRecodes[i][1];
+							getMethodName = colRecodes[i][1];
 							break;
 						}
 							
@@ -167,7 +167,7 @@ public class ReadJDBC extends Component {
 					Class<?>[] cArg = new Class[1];
 					cArg[0] = String.class;
 
-					Method meth = ResultSet.class.getMethod(type, cArg);
+					Method meth = ResultSet.class.getMethod(getMethodName, cArg);
 					Object o = meth.invoke(rset, entry.getKey());
 					Field f = curClass.getField(entry.getKey());
 					f.set(obj, o);

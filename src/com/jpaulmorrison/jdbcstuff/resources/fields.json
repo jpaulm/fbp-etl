@@ -1,0 +1,11 @@
+[{"columnName": "id", 
+  "objField": "id"},
+  {"columnName": "title", 
+  "objField": "title"},
+  {"columnName": "author", 
+  "objField": "author"},
+  {"columnName": "price", 
+  "objField": "price"},
+  {"columnName": "qty", 
+  "objField": "qty"}
+]

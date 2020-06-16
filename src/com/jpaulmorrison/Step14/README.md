@@ -33,3 +33,7 @@ First, we are going to add a JSON file of correspondences between table columns 
 ```
 
 For convenience, we will just put this in an IIP - as far as `ReadJDBC` is concerned, it could be in an IIP, or on a file - it doesn't care.
+
+So here is our network, with the field correspondences added in:
+
+![Adding correspondences](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step14/docs/Step14.png "Adding field correspondences")

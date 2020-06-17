@@ -1,0 +1,231 @@
+// Gradle migrated to v6.3
+
+//Use parameter 
+//   -Dorg.gradle.internal.publish.checksums.insecure=true
+// or add systemProp.org.gradle.internal.publish.checksums.insecure=true to gradle.properties
+// until this problem is fixed - see https://github.com/gradle/gradle/issues/11308
+
+buildscript {  
+    repositories {
+        mavenCentral()       
+    }
+     
+    dependencies {
+        classpath "io.codearte.gradle.nexus:gradle-nexus-staging-plugin:0.5.3"      
+     
+    }
+}
+
+
+
+//plugins {
+ //   id 'maven'
+//}
+
+
+apply plugin: 'io.codearte.nexus-staging'
+
+
+
+allprojects {
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+//apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+apply plugin: 'java-library'
+//apply plugin: 'de.marcphilipp.nexus-publish'  // check it out!
+
+   
+}
+
+version = '1.1.0'
+
+group = 'com.jpaulmorrison'
+
+
+              
+
+description = 'ETL Implementation using JavaFBP'
+
+compileJava.options.encoding = 'UTF-8'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+mainClassName = 'com.jpaulmorrison.Step14.code.networks.Step14'   
+
+nexusStaging {  
+    username = ossrhUser
+    password = ossrhPassword       
+    
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies { 	
+	implementation ('com.jpaulmorrison:javafbp:4.1.3')
+	implementation ('com.google.code.gson:gson:2.8.6')
+	implementation ('mysql:mysql-connector-java:8.0.20')
+ }  
+	
+java {       
+     withSourcesJar()
+     withJavadocJar()
+}
+
+
+jar {
+    archiveVersion = '1.1.0'
+    manifest {
+       attributes 'Implementation-Title': 'FBP-ETL', 'Implementation-Version': archiveVersion,
+             
+        "Class-Path": configurations.compileClasspath.collect { it.getName() }.join(' '),       
+         'Main-Class' : mainClassName
+    }
+      
+       
+    //baseName = project.name + '-all'
+    archiveBaseName = project.name
+    from sourceSets.main.output       
+      
+    dependsOn configurations.compileClasspath
+   
+    from {       
+      configurations.compileClasspath.findAll {  it.name.endsWith('jar')  }.collect {   zipTree(it)  }  
+      }
+    
+       
+}
+
+
+if (JavaVersion.current().isJava8Compatible()) {   
+        tasks.withType(Javadoc) {
+            options.addBooleanOption('Xdoclint:none', true)
+        }  
+}
+
+
+
+ext {
+    snapshotPublicationRepository = "https://oss.sonatype.org/content/repositories/snapshots/"
+    releasePublicationRepository = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+
+
+//mainClassName = 'com.jpaulmorrison.fbp.core.engine.Network'
+ossrhUser =  project.hasProperty('ossrhUser') ? project.property('ossrhUser') : ""
+osshrPassword = project.hasProperty('osshrPassword') ? project.property('osshrPassword') : ""
+
+
+}
+
+// Used to generate initial maven-dir layout
+task "create-dirs" { 
+doLast {
+description = "Create default maven directory structure" 
+//} 
+// {
+   sourceSets*.java.srcDirs*.each { it.mkdirs() }
+    sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+}
+}
+
+
+
+    publishing { 
+  
+  
+    publications {
+        mavenJava(MavenPublication) {
+        
+            groupId = 'com.jpaulmorrison'
+            artifactId = 'javafbp'       
+            version = '1.1.0'
+           
+            from components.java
+           
+                  
+            pom {
+                name = 'FBP-ETL'
+                description = 'ETL Implementation using JavaFBP'
+                 // groupId 'com.jpaulmorrison'
+                 packaging 'jar'
+         
+               url = 'https://github.com/jpaulm/fbp-etl'
+               
+               
+           
+                
+                licenses {
+                    license {
+                        name = 'Clarified Artistic License'
+                        url = 'https://spdx.org/licenses/ClArtistic.html'
+                    }
+                }
+                
+          developers {
+           developer {
+             id = 'jpaulmorr'
+             name = 'John Paul Rodker Morrison (Software architect/developer)'
+             email = 'jpaulmorr@gmail.com'
+           }
+           
+         }
+        
+      
+        
+        
+                scm {
+          connection = 'scm:git:git:https://github.com/jpaulm.git'
+          developerConnection = 'scm:git:ssh:https://github.com/jpaulm.git'
+          url = 'https://github.com/jpaulm.git'
+        }
+        
+      
+      
+            }
+        }
+    }
+    
+    
+    repositories {
+    
+       
+        maven {
+           
+         
+          
+          url (version.endsWith('SNAPSHOT') ? snapshotPublicationRepository : releasePublicationRepository) 
+          
+         credentials {
+                     username = ossrhUser
+                     password = ossrhPassword   
+                }
+           
+    
+    }
+}
+
+
+
+signing {
+    required {
+        // signing is required if this is a release version and the artifacts are to be published
+        !version.toString().endsWith('-SNAPSHOT') && tasks.withType(PublishToMavenRepository).find {
+             gradle.taskGraph.hasTask it
+        }
+    }
+    sign publishing.publications
+}
+
+
+javadoc {
+    if(JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
+
+} 

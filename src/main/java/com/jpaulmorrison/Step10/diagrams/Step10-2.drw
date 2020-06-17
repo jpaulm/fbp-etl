@@ -1,0 +1,32 @@
+<?xml version="1.0"?> 
+ <drawfbp_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib/drawfbp_file.xsd">
+<net>
+<desc>Componentization</desc>
+ <complang>Java</complang>
+ <clicktogrid>true</clicktogrid> 
+<sortbydate>false</sortbydate> 
+<blocks><block> <x> 473 </x> <y> 240 </y> <id> 1 </id> <type>B</type> <width>92</width> <height>64</height> <description>ReadJDBC</description> <blockclassname>C:\Users\Paul\Documents\GitHub\fbp-etl\bin!com.jpaulmorrison.Step08.code.components.ReadJDBC</blockclassname> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 206 </x> <y> 139 </y> <id> 4 </id> <type>I</type> <width>300</width> <height>28</height> <description>C:/Users/Paul/Documents/jdbc-pswdfile</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 201 </x> <y> 240 </y> <id> 5 </id> <type>B</type> <width>92</width> <height>64</height> <description>Read
+ pswd</description> <blockclassname>C:\Users\Paul\Documents\GitHub\javafbp\build\libs\javafbp-4.1.3.jar!com.jpaulmorrison.fbp.core.components.io.ReadFile</blockclassname> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 434 </x> <y> 64 </y> <id> 6 </id> <type>I</type> <width>348</width> <height>28</height> <description>jdbc:mysql://localhost:3306/ebookshop!books</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 264 </x> <y> 368 </y> <id> 7 </id> <type>I</type> <width>36</width> <height>28</height> <description>root</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 832 </x> <y> 240 </y> <id> 9 </id> <type>B</type> <width>92</width> <height>64</height> <description>Books 
+  to
+ Strings</description> <blockclassname>C:\Users\Paul\Documents\GitHub\fbp-etl\bin!com.jpaulmorrison.jdbcstuff.core.components.WriteObjectsToConsole</blockclassname> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 641 </x> <y> 269 </y> <id> 10 </id> <type>L</type> <width>82</width> <height>39</height> <description>"book"s</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+</blocks> <connections>
+<connection> <fromx>201</fromx> <fromy>153</fromy> <tox>200</tox> <toy>208</toy> <fromid>4</fromid> <toid>5</toid> <id>2</id> <endsatline>false</endsatline><downstreamport>SOURCE</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>247</fromx> <fromy>241</fromy> <tox>424</tox> <toy>240</toy> <fromid>5</fromid> <toid>1</toid> <id>3</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>PSWD</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>457</fromx> <fromy>78</fromy> <tox>456</tox> <toy>208</toy> <fromid>6</fromid> <toid>1</toid> <id>4</id> <endsatline>false</endsatline><downstreamport>DATABASE</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>282</fromx> <fromy>368</fromy> <tox>427</tox> <toy>262</toy> <fromid>7</fromid> <toid>1</toid> <id>6</id> <endsatline>false</endsatline><downstreamport>USER</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>519</fromx> <fromy>236</fromy> <tox>786</tox> <toy>236</toy> <fromid>1</fromid> <toid>9</toid> <id>8</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
+</connections> </net> </drawfbp_file>

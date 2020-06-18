@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 import com.jpaulmorrison.fbp.core.engine.Component; // Using 'Connection', 'Statement' and 'ResultSet' classes in java.sql package
 import com.jpaulmorrison.fbp.core.engine.ComponentDescription;
 import com.jpaulmorrison.fbp.core.engine.InPort;
@@ -48,7 +47,6 @@ public class ReadJDBC extends Component {
 		};
 
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	protected void execute() throws Exception {
 

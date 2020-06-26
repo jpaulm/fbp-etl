@@ -11,13 +11,13 @@ The various phases will be designated `Stepxx`, but the numbers will not necessa
 
 ## Steps
 
-[Step05 - First phase - little externalization](src/com/jpaulmorrison/Step05/)
+[Step05 - First phase - little externalization](src/main/java/com/jpaulmorrison/Step05/)
 
-[Step08 - Componentizing ReadJDBC.java](src/com/jpaulmorrison/Step08/)
+[Step08 - Componentizing ReadJDBC.java](src/main/java/com/jpaulmorrison/Step08/)
 
-[Step10 - Componentizing ReadJDBC.java (2)](src/com/jpaulmorrison/Step10/)
+[Step10 - Componentizing ReadJDBC.java (2)](src/main/java/com/jpaulmorrison/Step10/)
 
-[Step12 - Componentizing ReadJDBC.java (3)](src/com/jpaulmorrison/Step12/)
+[Step12 - Componentizing ReadJDBC.java (3)](src/main/java/com/jpaulmorrison/Step12/)
 
-[Step14 - Componentizing ReadJDBC.java (4)](src/com/jpaulmorrison/Step14/)
+[Step14 - Componentizing ReadJDBC.java (4)](src/com/main/java/jpaulmorrison/Step14/)
 

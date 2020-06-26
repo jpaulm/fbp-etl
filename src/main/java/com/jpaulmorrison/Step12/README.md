@@ -5,7 +5,7 @@ FBP-ETL
 
 ## Diagram from Third Stage
 
-![Output of WriteObjectsToConsole.java](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step10/docs/Step10-2.png "Output of WriteObjectsToConsole")
+![Output of WriteObjectsToConsole.java](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step10/docs/Step10-2.png "Output of WriteObjectsToConsole")
 
 
 ## "Componentizing" ReadJDBC.java (continued)   
@@ -44,11 +44,11 @@ public class Book {
 
 To pass this to our generalized component, we will have to add another IIP - see diagram below. 
 
-![Adding class name](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step12/docs/Step12-3.png "Adding class name")
+![Adding class name](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step12/docs/Step12-3.png "Adding class name")
 
 Here is the definition of the table `books` on the database:
 
-![Column display](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step12/docs/Step12.png "Column display")
+![Column display](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step12/docs/Step12.png "Column display")
 
 We therefore have:
 
@@ -64,7 +64,7 @@ Now, just as Java reflection allows you to obtain metadata, MySQL supports metad
 
 Here is some sample MySQL metadata output:
 
-![Column metadata](https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step12/docs/Step12-2.png "Column metadata")
+![Column metadata](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step12/docs/Step12-2.png "Column metadata")
  
 The column types determine the `ResultSet` `getxx()` methods, so we can use Java reflection to access the columns, by generating appropriate `getxx()` method invocations.
 
@@ -72,9 +72,9 @@ You will notice that, in the code segment above, the Java field names have the s
 
 > Now `price` should not be a simple arithmetic type, as it is currency, and should specify the currency denomination.  It is very easy to   assume that a price is in whatever currency we use in our home country, and we have all been doing this for decades in the IT business, but this is not adequate for a worldwide marketplace - see https://jpaulm.github.io/busdtyps.html .  This in turn means that the type of `price` on the database would in fact be `VARCHAR`, and its type in `Book` would be `Currency`.  We will be talking about this in a later step, but it gives an added reason for holding field relationships externally to the component code.  
 
-The latest version of `ReadJDBC.java` is now working, and has no knowledge of table column names *or* object field names. The output of this run is identical to that shown at the bottom of https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step10/README.md , except that `id` is showing - for some reason this was dropped from the original `select` statement.  
+The latest version of `ReadJDBC.java` is now working, and has no knowledge of table column names *or* object field names. The output of this run is identical to that shown at the bottom of https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step10/README.md , except that `id` is showing - for some reason this was dropped from the original `select` statement.  
 
-The code can be found in https://github.com/jpaulm/fbp-etl/blob/master/src/com/jpaulmorrison/Step12/code/components/ReadJDBC.java - what is interesting about the revised component is that
+The code can be found in https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step12/code/components/ReadJDBC.java - what is interesting about the revised component is that
 
 - there are no table column names or IP object (`Book`) field names hard-wired in the code
 - it assumes that the table column names and object field names *are identical*

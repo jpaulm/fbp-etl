@@ -42,4 +42,4 @@ The `ReadJDBC` component will now generate the `getxxx` method for each column b
 
 This completes the development stage for this component.  If error messages, or other run-time exceptions, occur, please raise an issue in Issues.
 
-We now have the "front end" of a generalized FBP-based ETL system. 
+**We now have the "front end" of a generalized FBP-based ETL system.**

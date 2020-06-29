@@ -10,7 +10,7 @@ import com.jpaulmorrison.fbp.core.engine.InputPort;
 import com.jpaulmorrison.fbp.core.engine.OutPort;
 import com.jpaulmorrison.fbp.core.engine.OutputPort;
 import com.jpaulmorrison.fbp.core.engine.Packet;
-import com.jpaulmorrison.jdbcstuff.resources.layouts.*;
+import com.jpaulmorrison.Step08.code.layouts.*;
 
 @ComponentDescription("Reads table from MySQL and outputs result")
 @InPorts({ 

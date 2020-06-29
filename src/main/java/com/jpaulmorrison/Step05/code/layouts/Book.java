@@ -1,4 +1,4 @@
-package com.jpaulmorrison.jdbcstuff.resources.layouts;
+package com.jpaulmorrison.Step05.code.layouts;
 
 import java.math.BigDecimal;
 

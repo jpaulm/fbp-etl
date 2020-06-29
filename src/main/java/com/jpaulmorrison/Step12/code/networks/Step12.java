@@ -14,7 +14,7 @@ protected void define() {
   connect(component("Read__pswd"), port("OUT"), component("ReadJDBC"), port("PSWD")); 
   initialize("jdbc:mysql://localhost:3306/ebookshop!books", component("ReadJDBC"), port("DATABASE")); 
   initialize("root", component("ReadJDBC"), port("USER")); 
-  initialize("com.jpaulmorrison.jdbcstuff.resources.layouts.Book", component("ReadJDBC"), port("CLASS")); 
+  initialize("com.jpaulmorrison.Step12.code.layouts.Book", component("ReadJDBC"), port("CLASS")); 
   //initialize("Selected rows", component("Display"), port("TITLE")); 
 } 
 public static void main(String[] argv) throws Exception  { 

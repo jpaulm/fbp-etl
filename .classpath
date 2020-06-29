@@ -26,5 +26,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Paul/Documents/GitHub/jbdtypes/build/libs/jbdtypes-1.1.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

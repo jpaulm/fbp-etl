@@ -1,10 +1,11 @@
-package com.jpaulmorrison.Step14.code.components;
+package com.jpaulmorrison.Step15.code.components;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.*;
 import java.util.HashMap;
+import java.util.Map;
 
 import com.google.gson.Gson;
 import com.jpaulmorrison.fbp.core.engine.Component; // Using 'Connection', 'Statement' and 'ResultSet' classes in java.sql package
@@ -100,6 +101,15 @@ public class ReadJDBC extends Component {
 																					// debugging
 			// outPort.send(create("The SQL statement is: \"" + strSelect +
 			// "\"\n")); // Echo For debugging
+			
+			Class<?> curClass = Class.forName(objClass);
+			
+			Map<String, Class<?>> map = conn.getTypeMap();
+			//ClassLoader cLoader = getClass().getClassLoader();
+			//ClassLoader cLoader = null;
+			//map.put("SchemaName.PRICE", Class.forName("MPrice", true, cLoader));
+			map.put("SchemaName.PRICE", Class.forName("com.jpaulmorrison.jbdtypes.MPrice"));
+			conn.setTypeMap(map);
 
 			ResultSet rset = stmt.executeQuery(strSelect);
 
@@ -121,7 +131,7 @@ public class ReadJDBC extends Component {
 			// next().
 			// For each row, retrieve the contents of the cells with
 			// getXxx(columnName).
-			Class<?> curClass = Class.forName(objClass);
+			
 
 			// number of columns should match number of fields in curClass - so
 			// let's test...
@@ -164,9 +174,9 @@ public class ReadJDBC extends Component {
 					String colName = fiArray[i].colName;
 					String objField = fiArray[i].objField;
 									
-					System.out.println("JDBC: " + colName + " " + hmColumns.get(colName));
+					//System.out.println("JDBC: " + colName + " " + hmColumns.get(colName));
 					
-					System.out.println("Obj: " + objField + " " + hmFields.get(objField));
+					//System.out.println("Obj: " + objField + " " + hmFields.get(objField));
 					
 					String objFType = hmFields.get(objField).toString(); 
 					
@@ -217,6 +227,10 @@ public class ReadJDBC extends Component {
 			// outPort.send(create("Total number of records = " + rowCount));
 
 		} catch (SQLException ex) {
+			//System.out.println("SQL Exception");
+			ex.printStackTrace();
+		} catch (ClassNotFoundException ex) {
+			//System.out.println("Class Not Found Exception");
 			ex.printStackTrace();
 		}
 

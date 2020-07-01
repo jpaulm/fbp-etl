@@ -54,7 +54,7 @@ compileJava.options.encoding = 'UTF-8'
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-mainClassName = 'com.jpaulmorrison.Step14.code.networks.Step14'   
+mainClassName = 'com.jpaulmorrison.Step15.code.networks.Step15'   
 
 nexusStaging {  
     username = ossrhUser

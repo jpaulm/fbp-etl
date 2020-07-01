@@ -1,11 +1,11 @@
 package com.jpaulmorrison.Step15.code.components;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.*;
 import java.util.HashMap;
-import java.util.Map;
 
 import com.google.gson.Gson;
 import com.jpaulmorrison.fbp.core.engine.Component; // Using 'Connection', 'Statement' and 'ResultSet' classes in java.sql package
@@ -104,12 +104,9 @@ public class ReadJDBC extends Component {
 			
 			Class<?> curClass = Class.forName(objClass);
 			
-			Map<String, Class<?>> map = conn.getTypeMap();
-			//ClassLoader cLoader = getClass().getClassLoader();
-			//ClassLoader cLoader = null;
-			//map.put("SchemaName.PRICE", Class.forName("MPrice", true, cLoader));
-			map.put("SchemaName.PRICE", Class.forName("com.jpaulmorrison.jbdtypes.MPrice"));
-			conn.setTypeMap(map);
+			//Map<String, Class<?>> map = conn.getTypeMap();			
+			//map.put("SchemaName.PRICE", Class.forName("com.jpaulmorrison.jbdtypes.MPrice"));
+			//conn.setTypeMap(map);
 
 			ResultSet rset = stmt.executeQuery(strSelect);
 
@@ -180,10 +177,21 @@ public class ReadJDBC extends Component {
 					
 					String objFType = hmFields.get(objField).toString(); 
 					
+					Class<?>[] cArg = new Class[1];
+					cArg[0] = String.class;
 								
-					if (objFType.startsWith("class")) {
+					if (objFType.startsWith("class ")) {
 						int k = objFType.lastIndexOf(".");
-						getMethodName = "get" + objFType.substring(k + 1);
+						String s = objFType.substring(k + 1);
+						if (s.equals("BigDecimal")) 
+								s = "Decimal";
+						getMethodName = "get" + s;
+						try {
+							ResultSet.class.getMethod(getMethodName, cArg);
+						} catch (NoSuchMethodException e)
+						{
+							getMethodName = "getString";
+						}
 					}
 					else {
 						getMethodName = "get" + objFType.substring(0, 1).toUpperCase();
@@ -191,45 +199,54 @@ public class ReadJDBC extends Component {
 					}
 					
 										
-					Class<?>[] cArg = new Class[1];
-					cArg[0] = String.class;
+					//Class<?>[] cArg = new Class[1];
+					//cArg[0] = String.class;
 
 					Method meth = null;
 					Object o = null;
-					try {
-						meth = ResultSet.class.getMethod(getMethodName, cArg);					
-					    o = meth.invoke(rset, colName);
 					
+					try {
+						meth = ResultSet.class.getMethod(getMethodName, cArg);
+					} catch (NoSuchMethodException e) {
+						System.out.println("Missing method - trying method: '" + getMethodName + "()' on '" + colName
+								+ "' " + hmColumns.get(colName) + " (target: '" + objField + "' "
+								+ hmFields.get(objField) + ")");
+					}
+					o = meth.invoke(rset, colName);
+
 					Field f = curClass.getField(objField);
-					f.set(obj, o);
-					} catch (InvocationTargetException e) {
-						System.out.println("Format mismatch - trying method: '" + 
-					    getMethodName + "()' on '" +
-					colName + "' " + hmColumns.get(colName) +
-								" (target: '" + objField + "' " + hmFields.get(objField) +
-								")");
-					}
-					catch (NoSuchMethodException e) {
-						System.out.println("Missing method - trying method: '" + 
-					    getMethodName + "()' on '" +
-					colName + "' " + hmColumns.get(colName) +
-								" (target: '" + objField + "' " + hmFields.get(objField) +
-								")");
-					}
+					
+					try {
+						f.set(obj, o);
+					} catch (/*InvocationTargetException*/ Exception e) {
+						//System.out.println("Format mismatch - trying method: '" + getMethodName + "()' on '" + colName
+						//		+ "' " + hmColumns.get(colName) + " (target: '" + objField + "' "
+						//		+ hmFields.get(objField) + ")");
+						//MPrice mp = new MPrice("CAD" +  o);  //fudge
+						String s = hmFields.get(objField).toString();
+						s = s.substring(6);
+						//Object oo = Class.forName(s).newInstance();
+						Constructor<?> cons = Class.forName(s).getConstructor(cArg);
+						Object oo = cons.newInstance((String) o);
+						f.set(obj, oo);
 					
 				}
-
+				}
 				outPort.send(create(obj));
 				++rowCount;
 			}
 
 			System.out.println("Total number of records = " + rowCount);
 			// outPort.send(create("Total number of records = " + rowCount));
-
+			 
 		} catch (SQLException ex) {
 			//System.out.println("SQL Exception");
 			ex.printStackTrace();
 		} catch (ClassNotFoundException ex) {
+			//System.out.println("Class Not Found Exception");
+			ex.printStackTrace();
+		}
+		catch (InvocationTargetException ex) {
 			//System.out.println("Class Not Found Exception");
 			ex.printStackTrace();
 		}

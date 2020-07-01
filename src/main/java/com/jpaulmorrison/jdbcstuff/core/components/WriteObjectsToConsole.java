@@ -69,11 +69,11 @@ import com.jpaulmorrison.fbp.core.engine.Component;
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} 
-			    if (value != null) {
+			    //if (value != null) {
 			        //System.out.println(field.getName() + "=" + value);
 			    	str += delim + field.getName() + ": " + value;
 			    	delim = "; ";
-			    }
+			    //}
 			}
 		  str += "}";
 		  System.out.println(str);

@@ -31,5 +31,10 @@ public class Book {
 	public int    qty;
 }
 ```
+Here is the diagram for Step15, modified to show the new access pattern for `Book.java`:
 
-There is an underlying assumption in the latest version of `ReadJDBC` - namely that all business types in `JBDTypes` have a "String constructor".  This rule should be adhered to in any future enhancements to JBDTypes.
+![Access to Book updated](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step15/docs/Step15.png "Access to Book.java updated")
+
+**Note:** There is an underlying assumption in the latest version of `ReadJDBC` - namely that all business types in `JBDTypes` have a "String constructor".  This rule should be adhered to in any future enhancements to JBDTypes.
+
+This is pretty much the end of development for the "E" end of "ETL"!

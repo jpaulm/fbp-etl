@@ -12,6 +12,8 @@ You can now look at the code for Step15.
 
 Here are the MySQL column definitions:
 
+![Table columns](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step15/docs/columns.png "Table columns")
+
 Here is the definition for Book.java:
 
 ```

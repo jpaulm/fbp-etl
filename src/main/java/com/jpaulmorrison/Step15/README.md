@@ -49,6 +49,8 @@ com.jpaulmorrison.jdbcstuff.resources.layouts.Book: {id: 1005; title: A Teaspoon
 
 Note the **prices** using the `jbdtypes` convention for `Monetary` and `MPrice`.
 
+`Write ObjectsToConsole` has an optional output port, so you can continue the network indefinitely...
+
 This is pretty much the end of development for the "E" end of "ETL"!  
 
 Further note: this is not really an "application" - it is a framework showing the usage of `ReadJDBC`.  To implement the "L" in "ETL", we will need to build something similar to `ReadJDBC`, but writing to a database, rather than reading from it.  In between, you can put any subnets or components, including, for really long-running applications, any kind of checkpointing logic you like (some approaches are described at length in Chap. 19 of the 2nd ed. of the book "Flow-Based Programming", or Chap. 20 of the 1st ed. - https://jpaulmorrison.com/fbp/checkpt.shtml ). 

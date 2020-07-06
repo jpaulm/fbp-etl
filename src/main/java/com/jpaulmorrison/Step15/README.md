@@ -39,11 +39,13 @@ Here is the diagram for Step15, modified to show the new access pattern for `Boo
 
 Here is the output from `WriteObjectsToConsole`:
 
+```
 com.jpaulmorrison.jdbcstuff.resources.layouts.Book: {id: 1001; title: Java for dummies; author: Tan Ah Teck; price: CAD11.11; qty: 11}
 com.jpaulmorrison.jdbcstuff.resources.layouts.Book: {id: 1002; title: More Java for dummies; author: Tan Ah Teck; price: CAD22.22; qty: 22}
 com.jpaulmorrison.jdbcstuff.resources.layouts.Book: {id: 1003; title: More Java for more dummies; author: Mohammad Ali; price: CAD33.33; qty: 33}
 com.jpaulmorrison.jdbcstuff.resources.layouts.Book: {id: 1004; title: A Cup of Java; author: Kumar; price: CAD44.44; qty: 44}
 com.jpaulmorrison.jdbcstuff.resources.layouts.Book: {id: 1005; title: A Teaspoon of Java; author: Kevin Jones; price: CAD55.55; qty: 55}
+```
 
 Note the **prices** using the `jbdtypes` convention for `Monetary` and `MPrice`.
 

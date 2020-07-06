@@ -32,4 +32,4 @@ public class Book {
 }
 ```
 
-There is an underlying assumption in the latest version of `ReadJDBC` - namely that all business types in `JBDTypes` have a "String constructor".  This rule should be adhered to in any future enhancements.
+There is an underlying assumption in the latest version of `ReadJDBC` - namely that all business types in `JBDTypes` have a "String constructor".  This rule should be adhered to in any future enhancements to JBDTypes.

@@ -11,7 +11,9 @@ protected void define() {
   initialize("jdbc:mysql://localhost:3306/ebookshop!books", component("ReadJDBC"), port("DATABASE")); 
   initialize("root", component("ReadJDBC"), port("USER")); 
   connect(component("ReadJDBC"), port("OUT"), component("Books____to__Strings"), port("IN")); 
-  initialize("com.jpaulmorrison.Step15.code.layouts.Book", component("ReadJDBC"), port("CLASS")); 
+  //initialize("com.jpaulmorrison.Step15.code.layouts.Book", component("ReadJDBC"), port("CLASS")); 
+  initialize("com.jpaulmorrison.jdbcstuff.resources.layouts.Book", 
+      component("ReadJDBC"), port("CLASS")); 
   initialize("[{\"colName\": \"id\",    \"objField\": \"id\"},   {\"colName\": \"title\",    \"objField\": \"title\"},   {\"colName\": \"author\",    \"objField\": \"author\"},   {\"colName\": \"price\",    \"objField\": \"price\"},   {\"colName\": \"qty\",    \"objField\": \"qty\"} ]", 
 		     component("ReadJDBC"), port("FIELDS")); 
 } 

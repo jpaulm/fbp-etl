@@ -1,11 +1,16 @@
 package com.jpaulmorrison.Step15.code.components;
 
+import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.sql.*;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 import com.google.gson.Gson;
 import com.jpaulmorrison.fbp.core.engine.Component; // Using 'Connection', 'Statement' and 'ResultSet' classes in java.sql package
@@ -65,7 +70,101 @@ public class ReadJDBC extends Component {
 		String objClass = (String) pp.getContent();
 		drop(pp);
 		classPort.close();
+		
+		/*
+		
+		LinkedList<URL> ll = new LinkedList<URL>();
+		
+		URL[] urls = null;
+		
+		File f = null;
+		try {
 
+			f = new  File("C:/Users/Paul/Documents/GitHub/jbdtypes/bin/main/");
+			if (!f.exists())
+				System.out.println("File " + f + " does not exist");
+			ll.add(f.toURI().toURL());	
+			
+			urls = ll.toArray(new URL[ll.size()]);
+
+		} catch (MalformedURLException e) {			
+			urls = null;
+			e.printStackTrace();
+		}
+
+		
+		URLClassLoader loader = null;
+		Class<?> cls = null;
+		if (urls != null) {
+
+			// Create a new class loader with the directory
+			//loader = new URLClassLoader(urls);
+			//		this.getClass().getClassLoader());
+			loader = new URLClassLoader(urls, this.getClass().getClassLoader());
+			//loader = new URLClassLoader(urls, this.getClass().
+			
+			 
+			 * from Block.java
+			
+				while (true) {
+
+					fp = cFile.getParentFile();    
+					if (fp == null)
+						break;
+					//try {
+						classFound = true;
+
+						URL[] urls = driver.buildUrls(fp);
+
+						if (urls == null)
+							tempComp = null;
+						else {
+
+							// Create a new class loader with the directory
+							myURLClassLoader = new URLClassLoader(urls, driver.getClass()
+									.getClassLoader());
+
+							try {
+								tempComp = myURLClassLoader.loadClass(u);
+							} catch (ClassNotFoundException e2) {
+								classFound = false;
+								error = "ClassNotFoundException";
+							} catch (NoClassDefFoundError e2) {
+								classFound = false;
+								error = "NoClassDefFoundError";
+							}
+
+							if (classFound)
+								break;
+							String v = fp.getName();
+							u = v + "." + u;
+							cFile = fp;
+						}
+					//} finally {
+
+					//}
+				} 
+			 * 
+			  
+			
+			
+			objClass = objClass.substring(0, objClass.length() - 6); // drop .class
+			objClass = objClass.replace("\\",  ".");
+			objClass = objClass.replace("/",  ".");
+			
+			try {
+				
+				cls = loader.loadClass(objClass);				
+			} catch (ClassNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+*/
+		
+		//Class<?> curClass = cls;
+		Class<?> curClass = Class.forName(objClass);
+		
 		String[] iipContents = dbTable.split("!", 2);
 
 		pp = fldsPort.receive();
@@ -86,28 +185,14 @@ public class ReadJDBC extends Component {
 						// "root", pswd); // For MySQL only
 
 						iipContents[0] + "?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC", user, pswd);
-				// The format is: "jdbc:mysql://hostname:port/databaseName",
-				// "username", "password"
-
-				// Step 2: Allocate a 'Statement' object in the Connection
+				
 				Statement stmt = conn.createStatement();) {
-			// Step 3: Execute a SQL SELECT query. The query result is returned
-			// in a 'ResultSet' object.
-			// String strSelect = "select title, author, price, qty from " +
-			// iipContents[1];
+		
 			String strSelect = "select * from " + iipContents[1];
 			System.out.println("The SQL statement is: \"" + strSelect + "\"\n"); // Echo
 																					// For
 																					// debugging
-			// outPort.send(create("The SQL statement is: \"" + strSelect +
-			// "\"\n")); // Echo For debugging
 			
-			Class<?> curClass = Class.forName(objClass);
-			
-			//Map<String, Class<?>> map = conn.getTypeMap();			
-			//map.put("SchemaName.PRICE", Class.forName("com.jpaulmorrison.jbdtypes.MPrice"));
-			//conn.setTypeMap(map);
-
 			ResultSet rset = stmt.executeQuery(strSelect);
 
 			ResultSetMetaData rsmd;
@@ -124,14 +209,9 @@ public class ReadJDBC extends Component {
 				e.printStackTrace();
 			}
 
-			// Step 4: Process the ResultSet by scrolling the cursor forward via
-			// next().
-			// For each row, retrieve the contents of the cells with
-			// getXxx(columnName).
-			
-
 			// number of columns should match number of fields in curClass - so
 			// let's test...
+			
 			int n = curClass.getFields().length;
 			if (n != numberOfColumns) {
 				System.out.println(
@@ -141,8 +221,8 @@ public class ReadJDBC extends Component {
 			
 			HashMap<String, Class<?>> hmFields = new HashMap<String, Class<?>>();
 			
-			for (Field f: curClass.getFields()) {
-				hmFields.put(f.getName(), f.getType());
+			for (Field fd: curClass.getFields()) {
+				hmFields.put(fd.getName(), fd.getType());
 			}
 
 			// iterate through rows
@@ -214,10 +294,10 @@ public class ReadJDBC extends Component {
 					}
 					o = meth.invoke(rset, colName);
 
-					Field f = curClass.getField(objField);
+					Field fd = curClass.getField(objField);
 					
 					try {
-						f.set(obj, o);
+						fd.set(obj, o);
 					} catch (/*InvocationTargetException*/ Exception e) {
 						//System.out.println("Format mismatch - trying method: '" + getMethodName + "()' on '" + colName
 						//		+ "' " + hmColumns.get(colName) + " (target: '" + objField + "' "
@@ -228,7 +308,7 @@ public class ReadJDBC extends Component {
 						//Object oo = Class.forName(s).newInstance();
 						Constructor<?> cons = Class.forName(s).getConstructor(cArg);
 						Object oo = cons.newInstance((String) o);
-						f.set(obj, oo);
+						fd.set(obj, oo);
 					
 				}
 				}
@@ -254,6 +334,8 @@ public class ReadJDBC extends Component {
 		// Step 5: Close conn and stmt - Done automatically by
 		// try-with-resources (JDK 7)
 	}
+	
+	
 
 	@Override
 	protected void openPorts() {

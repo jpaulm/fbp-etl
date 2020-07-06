@@ -8,4 +8,26 @@ So far, we have been using standard data types (SQL and Java).  However, as we h
 `Book.java` must be compiled separately from `ReadJDBC`, but the latter will eventually be moved into the JavaFBP libraries, so this will be in one of the following steps.
 
 
-**Under construction**
+You can now look at the code for Step15.
+
+Here are the MySQL column definitions:
+
+Here is the definition for Book.java:
+
+```
+package com.jpaulmorrison.jdbcstuff.resources.layouts;
+
+import com.jpaulmorrison.jbdtypes.MPrice;  // the jbdtypes jar file must be included in the class path
+
+//import java.math.BigDecimal;  --  no longer needed
+
+public class Book {
+	public int id;
+	public String title;
+	public String author;
+	public MPrice price;  // was BigDecimal
+	public int    qty;
+}
+```
+
+There is an underlying assumption in the latest version of `ReadJDBC` - namely that all business types in `JBDTypes` have a "String constructor".  This rule should be adhered to in any future enhancements.

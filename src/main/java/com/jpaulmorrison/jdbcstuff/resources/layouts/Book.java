@@ -1,6 +1,6 @@
 package com.jpaulmorrison.jdbcstuff.resources.layouts;
 
-import com.jpaulmorrison.jbdtypes.MPrice;
+import jbdtypes.MPrice;
 
 //import jbdtypes.*;
 

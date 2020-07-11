@@ -18,7 +18,7 @@
 
 ##############################################################################
 ##
-##  fbp-etl start up script for UN*X
+##  Gradle start up script for UN*X
 ##
 ##############################################################################
 
@@ -36,15 +36,15 @@ while [ -h "$PRG" ] ; do
     fi
 done
 SAVED="`pwd`"
-cd "`dirname \"$PRG\"`/.." >/dev/null
+cd "`dirname \"$PRG\"`/" >/dev/null
 APP_HOME="`pwd -P`"
 cd "$SAVED" >/dev/null
 
-APP_NAME="fbp-etl"
+APP_NAME="Gradle"
 APP_BASE_NAME=`basename "$0"`
 
-# Add default JVM options here. You can also use JAVA_OPTS and FBP_ETL_OPTS to pass JVM options to this script.
-DEFAULT_JVM_OPTS=""
+# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
+DEFAULT_JVM_OPTS='"-Xmx64m" "-Xms64m"'
 
 # Use the maximum available, or set MAX_FD != -1 to use that value.
 MAX_FD="maximum"
@@ -80,8 +80,7 @@ case "`uname`" in
     ;;
 esac
 
-CLASSPATH=$APP_HOME/lib/fbp-etl-1.1.0.jar:$APP_HOME/lib/javafbp-4.1.4.jar:$APP_HOME/lib/jbdtypes-1.1.0.jar:$APP_HOME/lib/gson-2.8.6.jar
-
+CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
@@ -130,7 +129,6 @@ fi
 if [ "$cygwin" = "true" -o "$msys" = "true" ] ; then
     APP_HOME=`cygpath --path --mixed "$APP_HOME"`
     CLASSPATH=`cygpath --path --mixed "$CLASSPATH"`
-    
     JAVACMD=`cygpath --unix "$JAVACMD"`
 
     # We build the pattern for arguments to be converted via cygpath
@@ -180,6 +178,6 @@ save () {
 APP_ARGS=`save "$@"`
 
 # Collect all arguments for the java command, following the shell quoting and substitution rules
-eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $FBP_ETL_OPTS -classpath "\"$CLASSPATH\"" com.jpaulmorrison.Step15.code.networks.Step15 "$APP_ARGS"
+eval set -- $DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS "\"-Dorg.gradle.appname=$APP_BASE_NAME\"" -classpath "\"$CLASSPATH\"" org.gradle.wrapper.GradleWrapperMain "$APP_ARGS"
 
 exec "$JAVACMD" "$@"

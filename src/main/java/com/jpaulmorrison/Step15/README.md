@@ -35,6 +35,8 @@ Here is the diagram for Step15, modified to show the new access pattern for `Boo
 
 ![Access to Book updated](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step15/docs/Step15.png "Access to Book.java updated")
 
+`WriteObjectsToConsole` uses Java reflection to get the definitions of incoming IPs.
+
 **Note:** There is an underlying assumption in the latest version of `ReadJDBC` - namely that all business types in `JBDTypes` have a "String constructor".  This rule should be adhered to in any future enhancements to JBDTypes.
 
 Here is the output from `WriteObjectsToConsole`:

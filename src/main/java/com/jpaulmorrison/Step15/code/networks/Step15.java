@@ -1,4 +1,4 @@
-package com.jpaulmorrison.Step14.code.networks; //change package name, or delete statement, if desired
+package com.jpaulmorrison.Step15.code.networks; //change package name, or delete statement, if desired
 import com.jpaulmorrison.fbp.core.engine.*; 
 public class Step15 extends Network {
 String description = "Componentization";

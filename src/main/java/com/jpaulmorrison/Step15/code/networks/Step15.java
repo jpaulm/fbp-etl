@@ -1,5 +1,4 @@
-package com.jpaulmorrison.Step15.code.networks;
-
+package com.jpaulmorrison.Step14.code.networks; //change package name, or delete statement, if desired
 import com.jpaulmorrison.fbp.core.engine.*; 
 public class Step15 extends Network {
 String description = "Componentization";
@@ -12,11 +11,8 @@ protected void define() {
   initialize("jdbc:mysql://localhost:3306/ebookshop!books", component("ReadJDBC"), port("DATABASE")); 
   initialize("root", component("ReadJDBC"), port("USER")); 
   connect(component("ReadJDBC"), port("OUT"), component("Books____to__Strings"), port("IN")); 
-  //initialize("com.jpaulmorrison.Step15.code.layouts.Book", component("ReadJDBC"), port("CLASS")); 
-  initialize("com.jpaulmorrison.jdbcstuff.resources.layouts.Book", 
-      component("ReadJDBC"), port("CLASS")); 
-  initialize("[{\"colName\": \"id\",    \"objField\": \"id\"},   {\"colName\": \"title\",    \"objField\": \"title\"},   {\"colName\": \"author\",    \"objField\": \"author\"},   {\"colName\": \"price\",    \"objField\": \"price\"},   {\"colName\": \"qty\",    \"objField\": \"qty\"} ]", 
-		     component("ReadJDBC"), port("FIELDS")); 
+  initialize("com.jpaulmorrison.jdbcstuff.resources.layouts.Book", component("ReadJDBC"), port("CLASS")); 
+  initialize("[{\"columnName\": \"id\",    \"objField\": \"id\"},   {\"columnName\": \"title\",    \"objField\": \"title\"},   {\"columnName\": \"author\",    \"objField\": \"author\"},   {\"columnName\": \"price\",    \"objField\": \"price\"},   {\"columnName\": \"qty\",    \"objField\": \"qty\"} ]", component("ReadJDBC"), port("FIELDS")); 
 } 
 public static void main(String[] argv) throws Exception  { 
   new Step15().go(); 

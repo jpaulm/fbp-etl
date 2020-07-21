@@ -13,6 +13,6 @@ Between the `ReadJDBC` and `WriteJDBC`, I have added a very simple "Transform" p
 
 Now, I fully agree that the network is hard to read, so we will now (belatedly!) develop the diagram, eventually using subnets for legibility, and test that it produces the same results as the hand-coded version.
 
-The generated MySQL `sales` table looks like this: 
+The generated MySQL `sales` table looks like this - our final output should look exactly the same! 
 
 ![Sales table](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/docs/sales.png "Sales table")

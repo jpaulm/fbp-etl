@@ -1,7 +1,7 @@
 FBP-ETL
 =======
 
-#### Develop WriteJDBC - Load section of ETL
+#### Develop WriteJDBC, Add Transform and "Load" section of ETL
 
 So far, we have developed our network in a rather methodical, slow and plodding way!  I am sure you are tired of this, and want to see what the final network looks like!  
 

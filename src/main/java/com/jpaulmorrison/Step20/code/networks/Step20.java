@@ -7,7 +7,7 @@ protected void define() {
   component("ReadJDBC",com.jpaulmorrison.fbp.core.components.jdbc.ReadJDBC.class); 
   component("Read__pswd",com.jpaulmorrison.fbp.core.components.io.ReadFile.class); 
   //component("Books____to__Strings",com.jpaulmorrison.fbp.core.components.misc.WriteObjectsToConsole.class);
-  component("WriteJDBC",com.jpaulmorrison.Step20.code.components.WriteJDBC.class); 
+  component("WriteJDBC",com.jpaulmorrison.fbp.core.components.jdbc.WriteJDBC.class); 
   component("BookSale",com.jpaulmorrison.Step20.code.components.BookSale.class); 
   
   component("Repl_1",com.jpaulmorrison.fbp.core.components.text.ReplString.class);

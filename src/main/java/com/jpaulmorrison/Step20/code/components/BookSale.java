@@ -10,7 +10,6 @@ import com.jpaulmorrison.fbp.core.engine.Packet;
 import com.jpaulmorrison.jdbcstuff.resources.layouts.Book;
 import com.jpaulmorrison.jdbcstuff.resources.layouts.Sale;
 
-import jbdtypes.MPrice;
 import jbdtypes.Quantity;
 
 @ComponentDescription("Convert Book into Sale")

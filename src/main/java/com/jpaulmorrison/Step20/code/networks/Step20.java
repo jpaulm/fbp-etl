@@ -6,7 +6,7 @@ String description = "Componentization";
 protected void define() { 
   component("ReadJDBC",com.jpaulmorrison.fbp.core.components.jdbc.ReadJDBC.class); 
   component("Read__pswd",com.jpaulmorrison.fbp.core.components.io.ReadFile.class); 
-  component("Books____to__Strings",com.jpaulmorrison.fbp.core.components.misc.WriteObjectsToConsole.class);
+  //component("Books____to__Strings",com.jpaulmorrison.fbp.core.components.misc.WriteObjectsToConsole.class);
   component("WriteJDBC",com.jpaulmorrison.Step20.code.components.WriteJDBC.class); 
   component("BookSale",com.jpaulmorrison.Step20.code.components.BookSale.class); 
   
@@ -26,10 +26,11 @@ protected void define() {
   connect("Repl_2.OUT[1]", component("WriteJDBC"), port("USER")); 
   
   connect(component("ReadJDBC"), port("OUT"), component("BookSale"), port("IN"));
-  connect(component("BookSale"), port("OUT"), component("Books____to__Strings"), port("IN"));
+  //connect(component("BookSale"), port("OUT"), component("Books____to__Strings"), port("IN"));
   
-  connect(component("Books____to__Strings"), port("OUT"), component("WriteJDBC"), port("IN"));
+  //connect(component("Books____to__Strings"), port("OUT"), component("WriteJDBC"), port("IN"));
  
+  connect(component("BookSale"), port("OUT"),  component("WriteJDBC"), port("IN"));
   
   initialize("jdbc:mysql://localhost:3306/ebookshop!sales", component("WriteJDBC"), port("DATABASE")); 
   

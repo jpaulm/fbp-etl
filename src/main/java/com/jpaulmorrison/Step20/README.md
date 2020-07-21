@@ -1,56 +1,18 @@
 FBP-ETL
 =======
 
-#### Adding Customized Types to ReadJDBC.java 
+#### Develop WriteJDBC - Load section of ETL
 
-So far, we have been using standard data types (SQL and Java).  However, as we have said in a number of publications, "BigDecimal" or, still worse, "float", are not adequate for monetary amounts.  We are therefore planning to convert the `Book` layout to use `MPrice` from https://github.com/jpaulm/jbdtypes - which see.  We intended to add a type `PRICE` to the database column definitions, but the MySQL platform does not allow this, so we will have to use `VARCHAR`.  
+So far, we have developed our network in a rather methodical, slow and plodding way!  I am sure you are tired of this, and want to see what the final network looks like!  
 
-`Book.java` must be compiled separately from `ReadJDBC`, but the latter will eventually be moved into the JavaFBP libraries, so this will become true in one of the following steps.
+There are several ways we could go about this, bearing in mind that the network diagram is already rather complex.  We could devlop the existing network visually, which will almost certainly go off the side of the screen.  :-)  Luckily we have the "subnet" concept, so we could design the network as a number of subnets - either by hand, or using the "Excise" function of DrawFBP.
 
+To be contrary, and also to show that it is pretty simple, I decided to code up `WriteJDBC`, using a lot of the code from `ReadJDBC` and code the rest of the network by hand.  The resulting code can be found at https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/code/components/WriteJDBC.java and https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/code/networks/Step20.java .
 
-You can now look at the code for Step15.
+Between the `ReadJDBC` and `WriteJDBC`, I have added a very simple "Transform" process: `BookSale`, which "extends" each book's quantity by the price, using Business Data types `MPrice` and `Monetary`.  It can be found at https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/code/components/BookSale.java . 
 
-Here are the MySQL column definitions:
+Now, I fully agree that the network is hard to read, so we will develop the diagram, eventually using subnets for legibility, and test that it produces the same results.
 
-![Table columns](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step15/docs/columns.png "Table columns")
+The generated MySQL `sales` table looks like this: 
 
-Here is the definition for Book.java:
-
-```
-package com.jpaulmorrison.jdbcstuff.resources.layouts;
-
-import jbdtypes.MPrice;  // the jbdtypes jar file must be included in the class path
-
-//import java.math.BigDecimal;  --  no longer needed
-
-public class Book {
-	public int id;
-	public String title;
-	public String author;
-	public MPrice price;  // was BigDecimal
-	public int    qty;
-}
-```
-Here is the diagram for Step15, modified to show the new access pattern for `Book.java`:
-
-![Access to Book updated](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step15/docs/Step15.png "Access to Book.java updated")
-
-**Note:** There is an underlying assumption in the latest version of `ReadJDBC` - namely that all business types in `JBDTypes` have a "String constructor".  This rule should be adhered to in any future enhancements to JBDTypes.
-
-Here is the output from `WriteObjectsToConsole`:
-
-```
-com.jpaulmorrison.jdbcstuff.resources.layouts.Book: {id: 1001; title: Java for dummies; author: Tan Ah Teck; price: CAD11.11; qty: 11}
-com.jpaulmorrison.jdbcstuff.resources.layouts.Book: {id: 1002; title: More Java for dummies; author: Tan Ah Teck; price: CAD22.22; qty: 22}
-com.jpaulmorrison.jdbcstuff.resources.layouts.Book: {id: 1003; title: More Java for more dummies; author: Mohammad Ali; price: CAD33.33; qty: 33}
-com.jpaulmorrison.jdbcstuff.resources.layouts.Book: {id: 1004; title: A Cup of Java; author: Kumar; price: CAD44.44; qty: 44}
-com.jpaulmorrison.jdbcstuff.resources.layouts.Book: {id: 1005; title: A Teaspoon of Java; author: Kevin Jones; price: CAD55.55; qty: 55}
-```
-
-Note the **prices** using the `jbdtypes` convention for `Monetary` and `MPrice`.
-
-`Write ObjectsToConsole` has an optional output port, so you can continue the network indefinitely...
-
-This is pretty much the end of development for the "E" end of "ETL"!  
-
-Further note: this is not really an "application" - it is a framework showing the usage of `ReadJDBC`.  To implement the "L" in "ETL", we will need to build something similar to `ReadJDBC`, but writing to a database, rather than reading from it.  In between, you can put any subnets or components, including, for really long-running applications, any kind of checkpointing logic you like (some approaches are described at length in Chap. 19 of the 2nd ed. of the book "Flow-Based Programming", or Chap. 20 of the 1st ed. - https://jpaulmorrison.com/fbp/checkpt.shtml ). 
+![Sales table](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/docs/sales.png "Sales table")

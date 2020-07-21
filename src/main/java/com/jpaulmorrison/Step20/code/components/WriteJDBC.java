@@ -145,6 +145,12 @@ import com.jpaulmorrison.fbp.core.engine.Packet;
 				int rowCount = 0;
 				Packet<?> pIn;
 			    while ((pIn = inPort.receive()) != null) {
+			    	
+			    	Object o = pIn.getContent();
+			    	if (o.getClass() != curClass) {
+			    		System.out.println("Unexpected class in incoming IP: " + o.getClass());
+			    		continue;
+			    	}
 			    	String sqlInsert = "insert into " + iipContents[1] + " values (";
 			    	// iterate through fiArray
 			    	String cma = ""; 
@@ -156,9 +162,9 @@ import com.jpaulmorrison.fbp.core.engine.Packet;
 						
 						//System.out.println("Obj: " + objField + " " + hmFields.get(objField));
 						
-						//String objFType = hmFields.get(objField).toString(); 
-						Field field = curClass.getDeclaredField(objField);
-						Object o = pIn.getContent();
+						//String objFType = hmFields.get(objField).toString();
+						
+						Field field = curClass.getDeclaredField(objField);						
 						sqlInsert += cma + "\"" + field.get(o).toString() + "\"";
 						cma = ",";
 			    	} 
@@ -166,7 +172,11 @@ import com.jpaulmorrison.fbp.core.engine.Packet;
 			    	 //String sqlInsert = "insert into sales values (3001, 'Gone Fishing', 'Kumar', 'CAD11.11', 11)";
 			        System.out.println("The SQL statement is: " + sqlInsert + "\n");  // Echo for debugging
 			        int countInserted = stmt.executeUpdate(sqlInsert);
-			        System.out.println(countInserted + " records inserted.\n");
+			        if (countInserted != 1) {
+			        	System.out.println("Couldn't insert record:\n");
+			        	System.out.println("... " + sqlInsert);
+			        }
+			        
 			        if (outPort.isConnected()) {
 				        outPort.send(pIn);
 				      } else {

@@ -9,6 +9,12 @@ There are several ways we could go about this, bearing in mind that the network 
 
 To be contrary, and also to show that it is pretty simple to do, I decided to code up `WriteJDBC`, using a lot of the code from `ReadJDBC`, and code the rest of the network by hand.  `WriteJDBC` has been moved to the `JavaFBP` project.   The resulting code can accordingly be found at https://github.com/jpaulm/javafbp/blob/master/src/main/java/com/jpaulmorrison/fbp/core/components/jdbc/WriteJDBC.java and https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/code/networks/Step20.java .
 
+In the latter, you will note that I have sometimes used the "shorthand" version of `connect`, e.g.:
+   
+    connect("Repl_2.OUT[0]", component("ReadJDBC"), port("USER")); 
+  
+where process name and port name are in the same string, separated by a period.  
+
 Between the `ReadJDBC` and `WriteJDBC`, I have added a very simple "Transform" process: `BookSale`, which "extends" each book's quantity by the price, generating a `total` $ CAD amount, using Business Data types `MPrice` and `Monetary`.  It can be found at https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/code/components/BookSale.java . 
 
 Now, I fully agree that the network is hard to read, so we will now (belatedly!) develop the diagram, eventually using subnets for legibility, and test that it produces the same results as the hand-coded version.

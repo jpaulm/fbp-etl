@@ -31,7 +31,11 @@ Now we are going to do some magic!  The diagram is a bit complex, so we are goin
 
 Unfortunately in this case, we had to play games with the long IIP, as the Excise boundary will go right through it, so I decided to remove it temporarily first and then add it back later!  We now have two diagrams, shown next:
 
+Tope level:
+
 ![Level #1](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/docs/Step20-1.png "Level #1")
+
+Extract subnet:
 
 ![Extract](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/docs/Extract.png "Extract")
 

@@ -27,3 +27,13 @@ You will remember in Step15, we put up this diagram:
 
 ![Access to Book updated](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step15/docs/Step15.png "Access to Book.java updated")
 
+Now we are going to do some magic!  The diagram is a bit complex, so we are going to show it as two levels: a high-level design and the Extract portion.  We have to play games with the long IIP, as the Excise boundary will go right through it, so I am going to remove it temporarily first and then add it back later!  We now have two diagrams, shown next:
+
+![Level #1](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/docs/Step20-1.png "Level #1")
+
+![Extract](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/docs/Extract.png "Extract")
+
+Not only is this easier to read, but you can see the current structure of the application, and can imagine how it is going to develop.  At the point where the block labeled "Books to Strings" is shown in the high level diagram we will be adding a "Transform" subnet and a "Load" subnet.
+
+
+

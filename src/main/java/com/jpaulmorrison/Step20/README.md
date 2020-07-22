@@ -27,7 +27,9 @@ You will remember in Step15, we put up this diagram:
 
 ![Access to Book updated](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step15/docs/Step15.png "Access to Book.java updated")
 
-Now we are going to do some magic!  The diagram is a bit complex, so we are going to show it as two levels: a high-level design and the Extract portion.  We have to play games with the long IIP, as the Excise boundary will go right through it, so I am going to remove it temporarily first and then add it back later!  We now have two diagrams, shown next:
+Now we are going to do some magic!  The diagram is a bit complex, so we are going to show it as two levels: a high-level design and the Extract portion.  We are going to use a piece of magic called "Enclosure Excise" where we surround a chunk of diagram with the Enclosure block, stretching the corners to enclose the piece we want to excise, and then "snip"!  
+
+Unfortunately in this case, we had to play games with the long IIP, as the Excise boundary will go right through it, so I decided to remove it temporarily first and then add it back later!  We now have two diagrams, shown next:
 
 ![Level #1](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/docs/Step20-1.png "Level #1")
 

@@ -41,5 +41,7 @@ Extract subnet:
 
 Not only is this easier to read, but you can see the current structure of the application, and can imagine how it is going to develop.  At the point where the block labeled "Books to Strings" is shown in the high level diagram we will be adding a "Transform" subnet and a "Load" subnet.
 
+Plus, if you do this using DrawFBP, you an jump back and forth between the top level and the various subnets.  
+
 
 

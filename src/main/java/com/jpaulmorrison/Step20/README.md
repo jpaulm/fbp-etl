@@ -16,3 +16,8 @@ Now, I fully agree that the network is hard to read, so we will now (belatedly!)
 The generated MySQL `sales` table looks like this - our final output should look exactly the same! 
 
 ![Sales table](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/docs/sales.png "Sales table")
+
+You will remember in Step15, we put up this diagram:
+
+![Access to Book updated](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step15/docs/Step15.png "Access to Book.java updated")
+

@@ -39,6 +39,8 @@ Extract subnet:
 
 ![Extract](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/docs/Extract.png "Extract")
 
+The "External Port" symbol with the word `OUT` under it in red may be thought of as a "sticky" connection.  This will actually be implemented in the generated code by a specialized component called `SubOut`. You can find the generated code for `Extract` at https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step20/code/networks/Extract.java .
+
 Not only is this easier to read, but you can see the current structure of the application, and can imagine how it is going to develop.  At the point where the block labeled "Books to Strings" is shown in the high level diagram we will be adding a "Transform" subnet and a "Load" subnet.
 
 Plus, if you do this using DrawFBP, you an jump back and forth between the top level and the various subnets.  

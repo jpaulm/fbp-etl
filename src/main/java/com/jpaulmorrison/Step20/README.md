@@ -45,5 +45,9 @@ Not only is this easier to read, but you can see the current structure of the ap
 
 Plus, if you do this using DrawFBP, you an jump back and forth between the top level and the various subnets.  
 
+In the diagram labelled "High level #1", you can see that the leftmost block has a double line around it.  This indicates that it is a subnet, and has both a diagram (shown in green), and will eventually have a component name (in blue), as it is both a network and a component.
+
+In the next step, we will add a (trivial) Transform subnet, and the "Load" subnet. 
+
 
 

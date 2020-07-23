@@ -23,4 +23,4 @@ The various phases will be designated `Stepxx`, but the numbers will not necessa
 
 [Step15 - Adding customized data types](src/main/java/com/jpaulmorrison/Step15/)
 
-[Step20 - Develop WriteJDBC, Add Transform and "Load" section of ETL](src/main/java/com/jpaulmorrison/Step20/)
+[Step20 - Develop WriteJDBC and start "Two Level" Structuring](src/main/java/com/jpaulmorrison/Step20/)

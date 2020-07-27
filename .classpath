@@ -22,6 +22,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry exported="true" kind="src" path="/jbdtypes"/>
-	<classpathentry kind="lib" path="C:/Users/Paul/Documents/GitHub/javafbp/build/libs/javafbp-4.1.5.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

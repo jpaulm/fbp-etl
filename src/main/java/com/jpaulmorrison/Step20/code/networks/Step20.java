@@ -45,12 +45,13 @@ protected void define() {
   
   initialize("com.jpaulmorrison.jdbcstuff.resources.layouts.Sale", 
 	      component("WriteJDBC"), port("CLASS")); 
-  initialize("[{\"colName\": \"id\",    \"objField\": \"id\"},   "
-  		+ "{\"colName\": \"title\",    \"objField\": \"title\"},   "
-  		+ "{\"colName\": \"author\",    \"objField\": \"author\"},   "
-  		+ "{\"colName\": \"price\",    \"objField\": \"price\"},   "
-  		+ "{\"colName\": \"qty\",    \"objField\": \"qty\"}, "
-  		+ "{\"colName\": \"total\",    \"objField\": \"total\"} ]", 
+  initialize("[{\"colName\": \"id\",    \"objField\": \"id2\"},   "
+		+  "{\"colName\": \"qty\",    \"objField\": \"qty2\"}, "  // try to force bug
+  		+ "{\"colName\": \"title\",    \"objField\": \"title2\"},   "
+  		+ "{\"colName\": \"author\",    \"objField\": \"author2\"},   "
+  		+ "{\"colName\": \"price\",    \"objField\": \"price2\"},   "
+  		//+ "{\"colName\": \"qty\",    \"objField\": \"qty2"}, "
+  		+ "{\"colName\": \"total\",    \"objField\": \"total2\"} ]", 
 			     component("WriteJDBC"), port("FIELDS")); 
 } 
 public static void main(String[] argv) throws Exception  { 

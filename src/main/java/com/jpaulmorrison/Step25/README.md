@@ -18,9 +18,23 @@ We have also magically created (by hand) the "Load" general component https://gi
 
 Here is the "Load" subnet - not surprisingly, almost identical to the "Extract" subnet, except that it has an `IN` port, instead of an `OUT` port.
 
-![Load](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step25/docs/Extract.png "Load")
+![Load](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step25/docs/Load.png "Load")
 
 
 At the location where we had a `WriteObjectsToConsole` process, we will use an actual simple Transform component, called `BookSale.java` - you can make it a subnet or not as you wish...  It basically multiplies a price specified using the `MPrice` type from the `jbdtypes` project by a quantity, giving a `Monetary` result.  `jbdtypes` is on Maven, and also in `https://github.com/jpaulm/jbdtypes`.
+
+We didn't really have to make "Transform" a subnet, since it only contains one component, but for uniformity we will do that - so here it is:
+
+![High Level](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step25/docs/Step25.png "Load") ,
+
+and here is the "Transform" subnet:
+
+![Transform](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step25/docs/Transform.png "Load") 
+
+So we now have all the diagrams.  Note that the "Step25" diagram has subnet *names* filled in, but no component names - these will have to be filled in after the three subnets have been compiled...  <!--Of course Eclipse will do that for you because the class names and source file names are the same.  -->
+
+
+
+
 
 

@@ -33,6 +33,10 @@ and here is the "Transform" subnet:
 
 So we now have all the diagrams.  Note that the "Step25" diagram has subnet *names* filled in, but no component names - these will have to be filled in after the three subnets have been compiled...  
 
+### Running a program with subnets
+
+So far, we have been able to simply run our applications under Eclipse without too much fiddling!  However, the new structure with subnets requires a bit more work!
+
 To generate a running program, perform the following steps:
 
 - Generate Java programs for all subnets.

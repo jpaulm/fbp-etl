@@ -39,6 +39,8 @@ So far, we have been able to simply run our applications under Eclipse without t
 
 To generate a running program, perform the following steps:
 
+- First, make sure that the output directory for your project is `bin`, not `target\classes` - this is to maintain compatibilty with DrawFBP's "Compile" facility.  It is easy to change it, if it was not set up this way to begin with!
+
 - Generate Java programs for all subnets.
 
 - Go into Eclipse to fill in correct **package** names

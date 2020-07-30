@@ -45,6 +45,10 @@ To generate a running program, perform the following steps:
 
 - Go into Eclipse to fill in correct **package** names
 
+- Add jbdtypes.build/libs/ latest jar file using DrawFBP "Add Additional Jar Files"
+
+- Use DrawFBP "Compile" function to compile, in this order: Book.java, Sale.java, BookSale.java
+
 
 
 

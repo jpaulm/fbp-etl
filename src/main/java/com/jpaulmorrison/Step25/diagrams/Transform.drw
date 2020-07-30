@@ -1,0 +1,18 @@
+<?xml version="1.0"?> 
+ <drawfbp_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib/drawfbp_file.xsd">
+<net>
+<desc>Transform.drw</desc>
+ <complang>Java</complang>
+ <clicktogrid>false</clicktogrid> 
+<sortbydate>false</sortbydate> 
+<blocks><block> <x> 408 </x> <y> 236 </y> <id> 1 </id> <type>B</type> <width>92</width> <height>64</height> <description>BookSale</description> <blockclassname>C:\Users\Paul\Documents\GitHub\fbp-etl\target\classes!com.jpaulmorrison.jdbcstuff.core.components.BookSale</blockclassname> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 136 </x> <y> 240 </y> <id> 2 </id> <type>C</type> <width>36</width> <height>28</height> <description>IN</description> <substreamsensitive>false</substreamsensitive><multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 704 </x> <y> 234 </y> <id> 5 </id> <type>D</type> <width>36</width> <height>28</height> <description>OUT</description> <substreamsensitive>false</substreamsensitive><multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+</blocks> <connections>
+<connection> <fromx>154</fromx> <fromy>238</fromy> <tox>362</tox> <toy>238</toy> <fromid>2</fromid> <toid>1</toid> <id>1</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>454</fromx> <fromy>235</fromy> <tox>686</tox> <toy>234</toy> <fromid>1</fromid> <toid>5</toid> <id>3</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
+</connections> </net> </drawfbp_file>

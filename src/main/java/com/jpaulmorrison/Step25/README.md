@@ -45,6 +45,8 @@ To generate a running program, perform the following steps:
 
 - Generate Java programs for all subnets.
 
+- **Remember to do Refreshes whenever returning to Eclipse**
+
 - Go into Eclipse to fill in correct **package** names
 
 - Add `jbdtypes` latest jar file using DrawFBP "Add Additional Jar Files" - you should find it in your `.m2/repository/com/jpaulmorrison/jbdtypes` folder.

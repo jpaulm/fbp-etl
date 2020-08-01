@@ -51,9 +51,14 @@ To generate a running program, perform the following steps:
 
 - Add `jbdtypes` latest jar file using DrawFBP "Add Additional Jar Files" - you should find it in your `.m2/repository/com/jpaulmorrison/jbdtypes` folder.
 
-- Use DrawFBP "Compile" function to compile, in this order: Book.java, Sale.java, BookSale.java
+- Use DrawFBP "Compile" function to compile, in this order: Book.java, Sale.java, BookSale.java, Extract.java, Transform.java, Load.java
 
-**Under construction! **
+- You can now fill in the components in Step25.drw
+
+- Generate the network for Step25
+
+- Now run Step25.java under Eclipse, or from the command line
+
 
 
 

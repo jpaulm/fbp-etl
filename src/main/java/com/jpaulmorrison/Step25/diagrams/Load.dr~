@@ -6,7 +6,7 @@ xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib
  <complang>Java</complang>
  <clicktogrid>true</clicktogrid> 
 <sortbydate>false</sortbydate> 
-<blocks><block> <x> 464 </x> <y> 302 </y> <id> 1 </id> <type>B</type> <width>92</width> <height>64</height> <description>WriteJDBC</description> <blockclassname>C:/Users/Paul/Documents/GitHub/javafbp/build/libs/javafbp-4.1.5.jar!com.jpaulmorrison.fbp.core.components.jdbc.WriteJDBC</blockclassname> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+<blocks><block> <x> 464 </x> <y> 302 </y> <id> 1 </id> <type>B</type> <width>92</width> <height>64</height> <description>WriteJDBC</description> <blockclassname>C:\Users\Paul\Documents\GitHub\javafbp\build\libs\javafbp-4.1.5.jar!com.jpaulmorrison.fbp.core.components.jdbc.WriteJDBC</blockclassname> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
 <block> <x> 197 </x> <y> 201 </y> <id> 4 </id> <type>I</type> <width>300</width> <height>28</height> <description>C:/Users/Paul/Documents/jdbc-pswdfile</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
@@ -17,7 +17,7 @@ xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib
 </block> 
 <block> <x> 788 </x> <y> 388 </y> <id> 7 </id> <type>I</type> <width>36</width> <height>28</height> <description>root</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
-<block> <x> 1547 </x> <y> 196 </y> <id> 25 </id> <type>I</type> <width>1972</width> <height>28</height> <description>[{"columnName": "id",    "objField": "id"},   {"columnName": "title",    "objField": "title"},   {"columnName": "author",    "objField": "author"},   {"columnName": "price",    "objField": "price"},   {"columnName": "qty",    "objField": "qty"} ]</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+<block> <x> 1547 </x> <y> 196 </y> <id> 25 </id> <type>I</type> <width>1852</width> <height>28</height> <description>[{"colName": "id",    "objField": "id"},   {"colName": "title",    "objField": "title"},   {"colName": "author",    "objField": "author"},   {"colName": "price",    "objField": "price"},   {"colName": "qty",    "objField": "qty"} ]</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
 <block> <x> 525 </x> <y> 545 </y> <id> 11 </id> <type>I</type> <width>404</width> <height>28</height> <description>com.jpaulmorrison.jdbcstuff.resources.layouts.Sale</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 

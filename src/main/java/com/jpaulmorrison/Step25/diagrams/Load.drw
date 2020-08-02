@@ -2,7 +2,7 @@
  <drawfbp_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib/drawfbp_file.xsd">
 <net>
-<desc>Extract.drw</desc>
+<desc>Load.drw</desc>
  <complang>Java</complang>
  <clicktogrid>true</clicktogrid> 
 <sortbydate>false</sortbydate> 
@@ -17,7 +17,7 @@ xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib
 </block> 
 <block> <x> 788 </x> <y> 388 </y> <id> 7 </id> <type>I</type> <width>36</width> <height>28</height> <description>root</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
-<block> <x> 1547 </x> <y> 196 </y> <id> 25 </id> <type>I</type> <width>1852</width> <height>28</height> <description>[{"colName": "id",    "objField": "id"},   {"colName": "title",    "objField": "title"},   {"colName": "author",    "objField": "author"},   {"colName": "price",    "objField": "price"},   {"colName": "qty",    "objField": "qty"} ]</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+<block> <x> 1547 </x> <y> 196 </y> <id> 25 </id> <type>I</type> <width>2300</width> <height>28</height> <description>[{"colName": "id",    "objField": "id2"},   {"colName": "title",    "objField": "title2"},   {"colName": "author",    "objField": "author2"},   {"colName": "price",    "objField": "price2"},   {"colName": "qty",    "objField": "qty2"} ,   {"colName": "total",    "objField": "total2"}  ]</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
 <block> <x> 525 </x> <y> 545 </y> <id> 11 </id> <type>I</type> <width>404</width> <height>28</height> <description>com.jpaulmorrison.jdbcstuff.resources.layouts.Sale</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 

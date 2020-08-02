@@ -6,6 +6,7 @@ import com.jpaulmorrison.fbp.core.engine.*;
 
 public class Extract extends SubNet {
 String description = "Extract.drw";
+
 protected void define() { 
   component("ReadJDBC",com.jpaulmorrison.fbp.core.components.jdbc.ReadJDBC.class); 
   component("SUBOUT",SubOut.class); 
@@ -17,6 +18,13 @@ protected void define() {
   initialize("root", component("ReadJDBC"), port("USER")); 
   initialize("com.jpaulmorrison.jdbcstuff.resources.layouts.Book", component("ReadJDBC"), port("CLASS")); 
   connect(component("ReadJDBC"), port("OUT"), component("SUBOUT"), port("IN" )); 
-  initialize("[{\"columnName\": \"id\",    \"objField\": \"id\"},   {\"columnName\": \"title\",    \"objField\": \"title\"},   {\"columnName\": \"author\",    \"objField\": \"author\"},   {\"columnName\": \"price\",    \"objField\": \"price\"},   {\"columnName\": \"qty\",    \"objField\": \"qty\"} ]", component("ReadJDBC"), port("FIELDS")); 
+  initialize("[{\"colName\": \"id\",    \"objField\": \"id2\"},"
+  		+ "   {\"colName\": \"title\",    \"objField\": \"title2\"},"
+  		+ "   {\"colName\": \"author\",    \"objField\": \"author2\"},"
+  		+ "   {\"colName\": \"price\",    \"objField\": \"price2\"}, "
+  		+ "  {\"colName\": \"qty\",    \"objField\": \"qty2\"} ]",
+  		component("ReadJDBC"), port("FIELDS")); 
 } 
+
+
 }

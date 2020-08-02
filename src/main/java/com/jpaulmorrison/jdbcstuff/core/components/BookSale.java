@@ -33,13 +33,13 @@ public class BookSale extends Component {
 	    while ((p = inport.receive()) != null) {
 	    	Book b = (Book)p.getContent();	    	
 	    	Sale s = new Sale();	
-	    	s.id2 = b.id;
-	    	s.title2 = b.title;
-	    	s.author2 = b.author;
-	    	s.price2 = b.price;
-	    	s.qty2= b.qty;
-	    	Quantity q = new Quantity(b.qty);
-	    	s.total2 = b.price.extend(q);
+	    	s.id2 = b.id2;
+	    	s.title2 = b.title2;
+	    	s.author2 = b.author2;
+	    	s.price2 = b.price2;
+	    	s.qty2= b.qty2;
+	    	Quantity q = new Quantity(b.qty2);
+	    	s.total2 = b.price2.extend(q);
 	    	outport.send(create(s));
 	    	drop(p);
 	    }

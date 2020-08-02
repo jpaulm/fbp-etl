@@ -16,7 +16,14 @@ protected void define() {
   initialize("jdbc:mysql://localhost:3306/ebookshop!sales", component("WriteJDBC"), port("DATABASE")); 
   initialize("root", component("WriteJDBC"), port("USER")); 
   initialize("com.jpaulmorrison.jdbcstuff.resources.layouts.Sale", component("WriteJDBC"), port("CLASS")); 
-  initialize("[{\"columnName\": \"id\",    \"objField\": \"id2\"},   {\"columnName\": \"title\",    \"objField\": \"title2\"},   {\"columnName\": \"author\",    \"objField\": \"author2\"},   {\"columnName\": \"price\",    \"objField\": \"price2\"},   {\"columnName\": \"qty\",    \"objField\": \"qty2\"} ]", component("WriteJDBC"), port("FIELDS")); 
   connect(component("SUBIN"), port("OUT"), component("WriteJDBC"), port("IN")); 
+  initialize("[{\"colName\": \"id\",    \"objField\": \"id2\"},"
+  		+ "   {\"colName\": \"title\",    \"objField\": \"title2\"},"
+  		+ "   {\"colName\": \"author\",    \"objField\": \"author2\"},"
+  		+ "   {\"colName\": \"price\",    \"objField\": \"price2\"}, "
+  		+ "   {\"colName\": \"total\",    \"objField\": \"total2\"},"
+  		+ "  {\"colName\": \"qty\",    \"objField\": \"qty2\"} ]",
+  		component("WriteJDBC"), port("FIELDS")); 
+  
 } 
 }

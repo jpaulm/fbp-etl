@@ -8,9 +8,9 @@ import jbdtypes.MPrice;
 
 
 public class Book {
-	public int id;
-	public String title;
-	public String author;
-	public MPrice price;  // was BigDecimal
-	public int    qty;
+	public int id2;
+	public String title2;
+	public String author2;
+	public MPrice price2;  // was BigDecimal
+	public int    qty2;
 }

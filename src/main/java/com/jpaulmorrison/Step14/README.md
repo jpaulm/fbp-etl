@@ -19,15 +19,15 @@ First, we are going to add a JSON file of correspondences between table columns 
 
 ```
 [{"colName": "id", 
-  "objField": "id"},
+  "objField": "id2"},
   {"colName": "title", 
-  "objField": "title"},
+  "objField": "title2"},
   {"colName": "author", 
-  "objField": "author"},
+  "objField": "author2"},
   {"colName": "price", 
-  "objField": "price"},
+  "objField": "price2"},
   {"colName": "qty", 
-  "objField": "qty"}
+  "objField": "qty2"}
 ]
 
 ```

@@ -10,7 +10,6 @@ FBP-ETL
 In the previous step, we said in connection with the code in https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step12/code/components/ReadJDBC.java that
 
 - there are no table column names or IP object (`Book`) field names hard-wired in the code
-- it assumes that the table column names and object field names *are identical*
 - what is (currently) hard-wired is the correspondence between `VARCHAR` and `String`, `DECIMAL` and `BigDecimal`, etc.
 
 We are going to try to relax these constraints.

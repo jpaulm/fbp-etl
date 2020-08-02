@@ -41,7 +41,6 @@ To generate a running program, perform the following steps:
 
 - First, make sure that the output directory for your project is `bin`, not `target\classes` - this is to maintain compatibilty with DrawFBP's "Compile" facility.  It is easy to change it, if it was not set up this way to begin with!  The `bin` specification must match the `src`: i.e. if `src` is `src\main\java`, `bin` must be specified as `bin/main/java'.
 
-**Not sure about this! **
 
 - Generate Java programs for all subnets.
 

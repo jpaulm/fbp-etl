@@ -53,11 +53,13 @@ To generate a running program, perform the following steps:
 
 - Use DrawFBP "Compile" function to compile, in this order: Book.java, Sale.java, BookSale.java, Extract.java, Transform.java, Load.java
 
-- You can now fill in the components in Step25.drw
+- You can now fill in the components in Step25.drw - youu can't generate the network until these are filled in...
 
 - Generate the network for Step25
 
 - Now run Step25.java under Eclipse, or from the command line
+
+-    **or** do `File\Compile` and `File/Run` in DrawFBP
 
 
 

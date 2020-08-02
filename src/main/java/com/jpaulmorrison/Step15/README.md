@@ -24,11 +24,11 @@ import jbdtypes.MPrice;  // the jbdtypes jar file must be included in the class 
 //import java.math.BigDecimal;  --  no longer needed
 
 public class Book {
-	public int id;
-	public String title;
-	public String author;
-	public MPrice price;  // was BigDecimal
-	public int    qty;
+	public int id2;
+	public String title2;
+	public String author2;
+	public MPrice price2;  // was BigDecimal
+	public int    qty2;
 }
 ```
 Here is the diagram for Step15, modified to show the new access pattern for `Book.java`:

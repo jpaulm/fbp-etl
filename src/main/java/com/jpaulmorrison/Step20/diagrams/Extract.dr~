@@ -19,7 +19,7 @@ xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib
 </block> 
 <block> <x> 255 </x> <y> 430 </y> <id> 7 </id> <type>I</type> <width>36</width> <height>28</height> <description>root</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
-<block> <x> 1547 </x> <y> 196 </y> <id> 25 </id> <type>I</type> <width>1972</width> <height>28</height> <description>[{"columnName": "id",    "objField": "id"},   {"columnName": "title",    "objField": "title"},   {"columnName": "author",    "objField": "author"},   {"columnName": "price",    "objField": "price"},   {"columnName": "qty",    "objField": "qty"} ]</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+<block> <x> 1547 </x> <y> 196 </y> <id> 25 </id> <type>I</type> <width>1852</width> <height>28</height> <description>[{"colName": "id",    "objField": "id"},   {"colName": "title",    "objField": "title"},   {"colName": "author",    "objField": "author"},   {"colName": "price",    "objField": "price"},   {"colName": "qty",    "objField": "qty"} ]</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
 <block> <x> 632 </x> <y> 331 </y> <id> 10 </id> <type>L</type> <width>82</width> <height>39</height> <description>"book"s</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 

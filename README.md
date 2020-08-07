@@ -5,7 +5,7 @@ FBP-ETL
 
 This is really a kit for building Extract-Transform-Load applications.  We will be showing how a simple network can be developed and expanded using custom- and pre-coded components, to allow endless combinations of databases, files, and network communication, to quickly develop ETL-type applications. 
 
-From the point of view of Flow-Based Programming (FBP) there is nothing special about ETL:  in this project we will be demonstrating many of the capabilities of FBP in the context of extracting, transforming and loading, using a mixture of precoded and custom components.
+From the point of view of Flow-Based Programming (FBP) there is nothing special about ETL:  in this project we will be demonstrating a number of the capabilities of FBP in the context of the Extract, Transform and Load type of application, using a mixture of precoded and custom components.
 
 The various phases will be designated `Stepxx`, but the numbers will not necessarily be consecutive.
 
@@ -26,3 +26,5 @@ The various phases will be designated `Stepxx`, but the numbers will not necessa
 [Step20 - Develop WriteJDBC and start "Two Level" Structuring](src/main/java/com/jpaulmorrison/Step20/)
 
 [Step25 - Transform and "Load" section of ETL - top-down and bottom-up](src/main/java/com/jpaulmorrison/Step25/)
+
+

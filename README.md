@@ -27,4 +27,7 @@ The various phases will be designated `Stepxx`, but the numbers will not necessa
 
 [Step25 - Transform and "Load" section of ETL - top-down and bottom-up](src/main/java/com/jpaulmorrison/Step25/)
 
+[Step30 - Exercise(s) for the reader](src/main/java/com/jpaulmorrison/Step30/)
+
+
 

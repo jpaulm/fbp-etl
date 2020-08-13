@@ -72,12 +72,12 @@ java {
 
 
 jar {
-    archiveVersion = '1.1.0'
+    //archiveVersion = '1.1.0'
     manifest {
-       attributes 'Implementation-Title': 'FBP-ETL', 'Implementation-Version': archiveVersion,
+       attributes ('Implementation-Title': 'FBP-ETL', 'Implementation-Version': project.version,
              
-        "Class-Path": configurations.compileClasspath.collect { it.getName() }.join(' '),       
-         'Main-Class' : mainClassName
+        'Class-Path': configurations.compileClasspath.collect { it.getName() }.join(' '),       
+         'Main-Class' : mainClassName)
     }
       
        

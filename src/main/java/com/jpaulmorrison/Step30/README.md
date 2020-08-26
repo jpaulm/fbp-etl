@@ -7,7 +7,7 @@ If you look at the following two diagrams, you will see that they both obtain th
 
 ![Extract](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step25/docs/Extract.png "Extract")
 
-![Load](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step25/docs/Extract.png "Load")
+![Load](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step25/docs/Load.png "Load")
 
 Even if the two tables involved require different passwords, they should probably both be obtained from the same place...
 
@@ -16,7 +16,7 @@ If you look at https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/j
 
 Now, since "Extract" and "Load" are separate subnets, we will have to add another input port to each of these, and move the password reader outside of them - i.e. to the higher level. 
 
-How about you giving it a try...!
+
 
 
 

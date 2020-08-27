@@ -26,7 +26,7 @@ Thses are all subnets, so, when using DrawFBP, double clicking on each name in g
 
 Now we will add an "external" Password block, and copy it to the two subnets that use it.  The subnets will of course need to be modified to externalise the password function.  Because the Password block has no inputs, this block effectively starts the whole network (remember that blocks with no non-IIP input connections are "self-starting" by FBP rules). 
 
-![High Level Diagram with separate Password block](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step30/docs/Step30-1.png "High Level Diagram with separate Password block")
+![High Level Diagram with separate Password block](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step30/docs/Step30-2.png "High Level Diagram with separate Password block")
 
 (The Password block will itself be a subnet, as it contains a ReadFile function, plus maybe more processing)
 

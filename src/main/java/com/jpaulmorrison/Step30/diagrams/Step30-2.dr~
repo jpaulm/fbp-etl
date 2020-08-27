@@ -12,7 +12,29 @@ xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib
 </block> 
 <block> <x> 767 </x> <y> 308 </y> <id> 19 </id> <type>B</type> <width>92</width> <height>64</height> <description>Load</description> <diagramfilename>C:/Users/Paul/Documents/GitHub/fbp-etl/src/main/java/com/jpaulmorrison/Step25/diagrams/Load.drw</diagramfilename> <blockclassname>C:\Users\Paul\Documents\GitHub\fbp-etl\bin\main\java!com.jpaulmorrison.Step25.code.networks.Load</blockclassname> <multiplex>false</multiplex><invisible>false</invisible><issubnet>true</issubnet> 
 </block> 
+<block> <x> 524 </x> <y> 116 </y> <id> 20 </id> <type>B</type> <width>92</width> <height>64</height> <description>Password
+ repo</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 739 </x> <y> 116 </y> <id> 23 </id> <type>B</type> <width>92</width> <height>64</height> <description>Splitter</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 112 </x> <y> 412 </y> <id> 25 </id> <type>B</type> <width>92</width> <height>64</height> <description>Kick</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
 </blocks> <connections>
+<connection> <fromx>785</fromx> <fromy>109</fromy> <tox>251</tox> <toy>296</toy> <fromid>23</fromid> <toid>16</toid> <id>16</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno><bends> <bend> <x>856</x> <y> 109</y> </bend>
+ <bend> <x>856</x> <y> 44</y> </bend>
+ <bend> <x>188</x> <y> 44</y> </bend>
+ <bend> <x>188</x> <y> 296</y> </bend>
+ </bends> </connection> 
+<connection> <fromx>158</fromx> <fromy>418</fromy> <tox>251</tox> <toy>312</toy> <fromid>25</fromid> <toid>16</toid> <id>17</id> <endsatline>false</endsatline><upstreamport>*</upstreamport><downstreamport>*</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>785</fromx> <fromy>132</fromy> <tox>813</tox> <toy>304</toy> <fromid>23</fromid> <toid>19</toid> <id>18</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno><bends> <bend> <x>856</x> <y> 132</y> </bend>
+ <bend> <x>856</x> <y> 304</y> </bend>
+ </bends> </connection> 
 <connection> <fromx>343</fromx> <fromy>302</fromy> <tox>478</tox> <toy>302</toy> <fromid>16</fromid> <toid>18</toid> <id>9</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
 <connection> <fromx>570</fromx> <fromy>304</fromy> <tox>721</tox> <toy>304</toy> <fromid>18</fromid> <toid>19</toid> <id>10</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>297</fromx> <fromy>270</fromy> <tox>478</tox> <toy>112</toy> <fromid>16</fromid> <toid>20</toid> <id>11</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno><bends> <bend> <x>297</x> <y> 112</y> </bend>
+ </bends> </connection> 
+<connection> <fromx>760</fromx> <fromy>276</fromy> <tox>380</tox> <toy>112</toy> <fromid>19</fromid> <toid>11</toid> <id>13</id> <endsatline>true</endsatline><upstreamport>OUT</upstreamport><segno>1</segno><bends> <bend> <x>760</x> <y> 196</y> </bend>
+ <bend> <x>380</x> <y> 196</y> </bend>
+ </bends> </connection> 
+<connection> <fromx>570</fromx> <fromy>120</fromy> <tox>693</tox> <toy>120</toy> <fromid>20</fromid> <toid>23</toid> <id>15</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
 </connections> </net> </drawfbp_file>

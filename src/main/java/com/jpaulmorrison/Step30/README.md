@@ -30,6 +30,13 @@ Now we will add an "external" Password block, and copy it to the two subnets tha
 
 (The Password block will itself be a subnet, as it contains a ReadFile function, plus maybe more processing)
 
+"Extract" now looks like this:
+
+![Extract with Password factored out](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step30/docs/Step30-3.png "Extract with Password factored out")
+
+
+
+
 
 
 

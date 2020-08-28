@@ -2,7 +2,7 @@
  <drawfbp_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib/drawfbp_file.xsd">
 <net>
-<desc>ETL High level #2</desc>
+<desc>ETL High level #3</desc>
  <complang>Java</complang>
  <clicktogrid>true</clicktogrid> 
 <sortbydate>false</sortbydate> 
@@ -12,20 +12,15 @@ xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib
 </block> 
 <block> <x> 767 </x> <y> 308 </y> <id> 19 </id> <type>B</type> <width>92</width> <height>64</height> <description>Load</description> <diagramfilename>C:/Users/Paul/Documents/GitHub/fbp-etl/src/main/java/com/jpaulmorrison/Step25/diagrams/Load.drw</diagramfilename> <blockclassname>C:\Users\Paul\Documents\GitHub\fbp-etl\bin\main\java!com.jpaulmorrison.Step25.code.networks.Load</blockclassname> <multiplex>false</multiplex><invisible>false</invisible><issubnet>true</issubnet> 
 </block> 
-<block> <x> 92 </x> <y> 116 </y> <id> 20 </id> <type>B</type> <width>92</width> <height>64</height> <description>Password
- repo</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+<block> <x> 92 </x> <y> 116 </y> <id> 20 </id> <type>B</type> <width>92</width> <height>64</height> <description>Password</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
-<block> <x> 334 </x> <y> 116 </y> <id> 23 </id> <type>B</type> <width>92</width> <height>64</height> <description>Splitter</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+<block> <x> 297 </x> <y> 116 </y> <id> 23 </id> <type>B</type> <width>92</width> <height>64</height> <description>Copy</description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
 </blocks> <connections>
-<connection> <fromx>312</fromx> <fromy>148</fromy> <tox>292</tox> <toy>270</toy> <fromid>23</fromid> <toid>16</toid> <id>19</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>PWD</downstreamport><segno>0</segno><bends> <bend> <x>488</x> <y> 212</y> </bend>
- <bend> <x>292</x> <y> 216</y> </bend>
- <bend> <x>292</x> <y> 216</y> </bend>
- </bends> </connection> 
-<connection> <fromx>363</fromx> <fromy>148</fromy> <tox>764</tox> <toy>276</toy> <fromid>23</fromid> <toid>19</toid> <id>20</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno><bends> <bend> <x>538</x> <y> 212</y> </bend>
- <bend> <x>760</x> <y> 216</y> </bend>
+<connection> <fromx>293</fromx> <fromy>148</fromy> <tox>293</tox> <toy>270</toy> <fromid>23</fromid> <toid>16</toid> <id>21</id> <endsatline>false</endsatline><upstreamport>OUT[0]</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>343</fromx> <fromy>113</fromy> <tox>756</tox> <toy>276</toy> <fromid>23</fromid> <toid>19</toid> <id>22</id> <endsatline>false</endsatline><upstreamport>OUT[1]</upstreamport><downstreamport>IN</downstreamport><segno>0</segno><bends> <bend> <x>756</x> <y> 113</y> </bend>
  </bends> </connection> 
 <connection> <fromx>343</fromx> <fromy>302</fromy> <tox>478</tox> <toy>302</toy> <fromid>16</fromid> <toid>18</toid> <id>9</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
 <connection> <fromx>570</fromx> <fromy>304</fromy> <tox>721</tox> <toy>304</toy> <fromid>18</fromid> <toid>19</toid> <id>10</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
-<connection> <fromx>138</fromx> <fromy>120</fromy> <tox>288</tox> <toy>120</toy> <fromid>20</fromid> <toid>23</toid> <id>15</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>138</fromx> <fromy>120</fromy> <tox>251</tox> <toy>120</toy> <fromid>20</fromid> <toid>23</toid> <id>15</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
 </connections> </net> </drawfbp_file>

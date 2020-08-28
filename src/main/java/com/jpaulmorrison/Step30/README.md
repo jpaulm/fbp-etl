@@ -1,7 +1,7 @@
 FBP-ETL
 =======
 
-####  Exercise(s) for the reader
+####  Externalising Password block
 
 If you look at the following two diagrams, you will see that they both obtain the password from a file...
 

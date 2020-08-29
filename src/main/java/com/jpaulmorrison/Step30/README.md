@@ -32,7 +32,7 @@ Now we will add an "external" Password block, and copy it to the two subnets tha
 
 "Extract" now looks like this:
 
-![Extract with Password factored out](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step30/docs/Step30-3.png "Extract with Password factored out")
+![Extract with Password factored out](https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/Step30/docs/Extract.png "Extract with Password factored out")
 
 
 

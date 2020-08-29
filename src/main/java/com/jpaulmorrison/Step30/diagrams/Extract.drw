@@ -22,8 +22,6 @@ xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib
 </block> 
 <block> <x> 132 </x> <y> 295 </y> <id> 28 </id> <type>C</type> <width>36</width> <height>28</height> <description>PWD</description> <substreamsensitive>false</substreamsensitive><multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
 </block> 
-<block> <x> 976 </x> <y> 528 </y> <id> 29 </id> <type>B</type> <width>92</width> <height>64</height> <description></description> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
-</block> 
 </blocks> <connections>
 <connection> <fromx>448</fromx> <fromy>140</fromy> <tox>447</tox> <toy>270</toy> <fromid>6</fromid> <toid>1</toid> <id>4</id> <endsatline>false</endsatline><downstreamport>DATABASE</downstreamport><segno>0</segno></connection> 
 <connection> <fromx>273</fromx> <fromy>430</fromy> <tox>418</tox> <toy>324</toy> <fromid>7</fromid> <toid>1</toid> <id>6</id> <endsatline>false</endsatline><downstreamport>USER</downstreamport><segno>0</segno></connection> 

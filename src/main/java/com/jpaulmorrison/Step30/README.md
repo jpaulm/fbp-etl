@@ -1,7 +1,7 @@
 FBP-ETL
 =======
 
-####  Externalising Password block
+####  Externalising Password Block
 
 If you look at the following two diagrams, you will see that they both obtain the password from a file...
 

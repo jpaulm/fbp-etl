@@ -3,6 +3,8 @@ FBP-ETL
 
 #### ETL (Extract-Transform-Load) framework based on JavaFBP
 
+General web site on Flow-Based Programming: https://jpaulm.github.io/fbp/ .
+
 This is really a kit for building Extract-Transform-Load applications.  We will be showing how a simple network can be developed and expanded using custom- and pre-coded components, to allow endless combinations of databases, files, and network communication, to quickly develop ETL-type applications. 
 
 From the point of view of Flow-Based Programming (FBP) there is nothing special about ETL:  in this project we will be demonstrating a number of the capabilities of FBP in the context of the Extract, Transform and Load type of application, using a mixture of precoded and custom components.

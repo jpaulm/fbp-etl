@@ -11,6 +11,12 @@ From the point of view of Flow-Based Programming (FBP) there is nothing special 
 
 The various phases will be designated `Stepxx`, but the numbers will not necessarily be consecutive.
 
+## Running Step300
+
+The JavaFBP network `Step300` (held in `Step30`) actually reads a table, makes a simple monetary calculation on each row, and stores the result back in the table.  `Step300` comprises 3 subnets: Extract, Transform, and Load, each of which contains all required parametric information, e.g. table names.  The table password is held in a separate file.
+
+If necessary, go into `services.msc`, and restart MySQL.
+
 ## Steps
 
 [Step05 - First phase - little externalization](src/main/java/com/jpaulmorrison/Step05/)

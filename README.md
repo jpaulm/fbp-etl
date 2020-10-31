@@ -17,9 +17,11 @@ The JavaFBP network `Step300` (held in `Step30`) actually reads a table, makes a
 
 If necessary, go into `services.msc`, and restart MySQL.
 
-Command to run this from command line: `java -cp ..\javafbp\build\libs\javafbp-4.1.10.jar;build\libs\fbp-etl-1.1.0.jar;. com.jpaulmorrison.Step30.code.networks.Step300`
+To run Step300.java from the command line, do a `cd` to position to your `fbp-etl` directory
 
-# There seems to be a problem with this - feedback would be appreciated!
+Then enter `java -cp "build\libs\fbp-etl-1.1.0.jar;." com.jpaulmorrison.Step30.code.networks.Step300`
+
+Note: the `fbp-etl` jar file contains `javafbp`, so this does not need to be added to the command line.
 
 ### Steps
 

@@ -1,7 +1,7 @@
 FBP-ETL
 =======
 
-#### ETL (Extract-Transform-Load) framework based on JavaFBP
+## ETL (Extract-Transform-Load) framework based on JavaFBP
 
 General web site on Flow-Based Programming: https://jpaulm.github.io/fbp/ .
 
@@ -11,7 +11,19 @@ From the point of view of Flow-Based Programming (FBP) there is nothing special 
 
 The various phases will be designated `Stepxx`, but the numbers will not necessarily be consecutive.
 
-## Steps
+#### Running Step300
+
+The JavaFBP network `Step300` (held in `Step30`) actually reads a table, makes a simple monetary calculation on each row, and stores the result back in the table.  `Step300` comprises 3 subnets: Extract, Transform, and Load, each of which contains all required parametric information, e.g. table names.  The table password is held in a separate file.
+
+If necessary, go into `services.msc`, and restart MySQL.
+
+To run Step300.java from the command line, do a `cd` to position to your `fbp-etl` directory
+
+Then enter `java -cp "build\libs\fbp-etl-1.1.0.jar;." com.jpaulmorrison.Step30.code.networks.Step300`
+
+Note: the `fbp-etl` jar file contains `javafbp`, so this does not need to be added to the command line.
+
+### Steps
 
 [Step05 - First phase - little externalization](src/main/java/com/jpaulmorrison/Step05/)
 

@@ -25,7 +25,7 @@ Then enter
 
 `java -cp ".;..\..\downloads\mysql-connector-java-8.0.22.jar;..\javafbp\build\libs\javafbp-4.1.11.jar;build\libs\fbp-etl-1.1.0.jar" com.jpaulmorrison.Step30.code.networks.Step300`
 
-Note: this is incomplete as it needs protobuf and jbdtypes jar files - some repackaging needed
+Note: this is incomplete as it needs jbdtypes jar file - some repackaging needed to run (protobuf is in mysql jar file)
 
 ### Steps
 

@@ -36,11 +36,11 @@ protected void define() {
   
   initialize("com.jpaulmorrison.jdbcstuff.resources.layouts.Book", 
       component("ReadJDBC"), port("CLASS")); 
-  initialize("[{\"colName\": \"id\",    \"objField\": \"id\"},   "
-  		+ "{\"colName\": \"title\",    \"objField\": \"title\"},  "
-  		+ " {\"colName\": \"author\",    \"objField\": \"author\"},  "
-  		+ " {\"colName\": \"price\",    \"objField\": \"price\"},   "
-  		+ "{\"colName\": \"qty\",    \"objField\": \"qty\"} ]", 
+  initialize("[{\"colName\": \"id\",    \"objField\": \"id2\"},   "
+  		+ "{\"colName\": \"title\",    \"objField\": \"title2\"},  "
+  		+ " {\"colName\": \"author\",    \"objField\": \"author2\"},  "
+  		+ " {\"colName\": \"price\",    \"objField\": \"price2\"},   "
+  		+ "{\"colName\": \"qty\",    \"objField\": \"qty2\"} ]", 
 		     component("ReadJDBC"), port("FIELDS")); 
   
   initialize("com.jpaulmorrison.jdbcstuff.resources.layouts.Sale", 

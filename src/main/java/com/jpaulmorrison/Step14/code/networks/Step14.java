@@ -1,9 +1,10 @@
 package com.jpaulmorrison.Step14.code.networks;
+import com.jpaulmorrison.fbp.core.components.jdbc.ReadJDBC;
 import com.jpaulmorrison.fbp.core.engine.*; 
 public class Step14 extends Network {
 String description = "Componentization";
 protected void define() { 
-  component("ReadJDBC",com.jpaulmorrison.Step14.code.components.ReadJDBC.class); 
+  component("ReadJDBC",ReadJDBC.class); 
   component("Read__pswd",com.jpaulmorrison.fbp.core.components.io.ReadFile.class); 
   component("Books____to__Strings",com.jpaulmorrison.fbp.core.components.misc.WriteObjectsToConsole.class); 
   initialize("C:/Users/Paul/Documents/jdbc-pswdfile", component("Read__pswd"), port("SOURCE")); 

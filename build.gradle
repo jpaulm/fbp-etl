@@ -61,8 +61,8 @@ repositories {
 }
 
 dependencies { 	
-	implementation ('com.jpaulmorrison:javafbp:4.1.6')
-	implementation ('com.jpaulmorrison:jbdtypes:1.1.1')
+	compileOnly ('com.jpaulmorrison:javafbp:4.1.11')
+	compileOnly ('com.jpaulmorrison:jbdtypes:1.1.1')
  }  
 	
 java {       
@@ -85,11 +85,11 @@ jar {
     archiveBaseName = project.name
     from sourceSets.main.output       
       
-    dependsOn configurations.compileClasspath
+   // dependsOn configurations.compileClasspath
    
-    from {       
-      configurations.compileClasspath.findAll {  it.name.endsWith('jar')  }.collect {   zipTree(it)  }  
-      }
+ //   from {       
+   //   configurations.compileClasspath.findAll {  it.name.endsWith('jar')  }.collect {   zipTree(it)  }  
+   //   }
     
        
 }

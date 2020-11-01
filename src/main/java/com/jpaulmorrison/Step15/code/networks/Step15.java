@@ -12,7 +12,7 @@ protected void define() {
   initialize("root", component("ReadJDBC"), port("USER")); 
   connect(component("ReadJDBC"), port("OUT"), component("Books____to__Strings"), port("IN")); 
   initialize("com.jpaulmorrison.jdbcstuff.resources.layouts.Book", component("ReadJDBC"), port("CLASS")); 
-  initialize("[{\"columnName\": \"id\",    \"objField\": \"id\"},   {\"columnName\": \"title\",    \"objField\": \"title\"},   {\"columnName\": \"author\",    \"objField\": \"author\"},   {\"columnName\": \"price\",    \"objField\": \"price\"},   {\"columnName\": \"qty\",    \"objField\": \"qty\"} ]", component("ReadJDBC"), port("FIELDS")); 
+  initialize("[{\"colName\": \"id\",    \"objField\": \"id2\"},   {\"colName\": \"title\",    \"objField\": \"title2\"},   {\"colName\": \"author\",    \"objField\": \"author2\"},   {\"colName\": \"price\",    \"objField\": \"price2\"},   {\"colName\": \"qty\",    \"objField\": \"qty2\"} ]", component("ReadJDBC"), port("FIELDS")); 
 } 
 public static void main(String[] argv) throws Exception  { 
   new Step15().go(); 

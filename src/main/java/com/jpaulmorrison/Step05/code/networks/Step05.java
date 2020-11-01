@@ -1,6 +1,6 @@
 package com.jpaulmorrison.Step05.code.networks; //change package name, or delete statement, if desired
+import com.jpaulmorrison.fbp.core.components.jdbc.ReadJDBC;
 import com.jpaulmorrison.fbp.core.engine.*;  
-import com.jpaulmorrison.Step05.code.components.*;
 public class Step05 extends Network {
 String description = "First stage of FBP-ETL development";
 protected void define() { 

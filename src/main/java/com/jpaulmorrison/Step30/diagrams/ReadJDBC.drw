@@ -1,0 +1,31 @@
+<?xml version="1.0"?> 
+ <drawfbp_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="https://github.com/jpaulm/drawfbp/blob/master/lib/drawfbp_file.xsd">
+<net>
+<desc>(subnet)</desc>
+ <complang>Java</complang>
+ <clicktogrid>false</clicktogrid> 
+<scalingfactor>1.0</scalingfactor> 
+<sortbydate>false</sortbydate> 
+<blocks><block> <x> 464 </x> <y> 302 </y> <id> 1 </id> <type>B</type> <width>92</width> <height>64</height> <description>ReadJDBC</description> <blockclassname>C:\Users\Paul\Documents\GitHub\javafbp\build\libs\javafbp-4.1.4.jar!com.jpaulmorrison.fbp.core.components.jdbc.ReadJDBC</blockclassname> <multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 430 </x> <y> 140 </y> <id> 33 </id> <type>C</type> <width>36</width> <height>28</height> <description>IN</description> <substreamsensitive>false</substreamsensitive><multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 255 </x> <y> 430 </y> <id> 35 </id> <type>C</type> <width>36</width> <height>28</height> <description>USER</description> <substreamsensitive>false</substreamsensitive><multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 592 </x> <y> 531 </y> <id> 37 </id> <type>C</type> <width>36</width> <height>28</height> <description>CLASS</description> <substreamsensitive>false</substreamsensitive><multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 795 </x> <y> 298 </y> <id> 39 </id> <type>D</type> <width>36</width> <height>28</height> <description>OUT</description> <substreamsensitive>false</substreamsensitive><multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 885 </x> <y> 210 </y> <id> 41 </id> <type>C</type> <width>36</width> <height>28</height> <description>FIELDS</description> <substreamsensitive>false</substreamsensitive><multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+<block> <x> 132 </x> <y> 296 </y> <id> 43 </id> <type>C</type> <width>36</width> <height>28</height> <description>PSWD</description> <substreamsensitive>false</substreamsensitive><multiplex>false</multiplex><invisible>false</invisible><issubnet>false</issubnet> 
+</block> 
+</blocks> <connections>
+<connection> <fromx>610</fromx> <fromy>531</fromy> <tox>510</tox> <toy>322</toy> <fromid>37</fromid> <toid>1</toid> <id>16</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>CLASS</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>510</fromx> <fromy>298</fromy> <tox>777</tox> <toy>298</toy> <fromid>1</fromid> <toid>39</toid> <id>17</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>IN</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>903</fromx> <fromy>210</fromy> <tox>512</tox> <toy>270</toy> <fromid>41</fromid> <toid>1</toid> <id>18</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>FIELDS</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>150</fromx> <fromy>296</fromy> <tox>418</tox> <toy>297</toy> <fromid>43</fromid> <toid>1</toid> <id>19</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>PSWD</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>448</fromx> <fromy>140</fromy> <tox>447</tox> <toy>270</toy> <fromid>33</fromid> <toid>1</toid> <id>14</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>DATABASE</downstreamport><segno>0</segno></connection> 
+<connection> <fromx>273</fromx> <fromy>430</fromy> <tox>418</tox> <toy>324</toy> <fromid>35</fromid> <toid>1</toid> <id>15</id> <endsatline>false</endsatline><upstreamport>OUT</upstreamport><downstreamport>USER</downstreamport><segno>0</segno></connection> 
+</connections> </net> </drawfbp_file>

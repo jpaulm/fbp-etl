@@ -82,7 +82,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\fbp-etl-1.1.0.jar;%APP_HOME%\lib\javafbp-4.1.6.jar;%APP_HOME%\lib\jbdtypes-1.1.1.jar;%APP_HOME%\lib\gson-2.8.6.jar;%APP_HOME%\lib\mysql-connector-java-8.0.21.jar;%APP_HOME%\lib\protobuf-java-3.11.4.jar
+set CLASSPATH=%APP_HOME%\lib\fbp-etl-1.1.0.jar;%APP_HOME%\lib\mysql-connector-java-8.0.22.jar;%APP_HOME%\lib\protobuf-java-3.11.4.jar
 
 
 @rem Execute fbp-etl

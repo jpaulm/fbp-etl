@@ -39,13 +39,13 @@ John Paul Rodker Morrison (Software architect/developer)
 <groupId>com.google.code.gson</groupId>
 <artifactId>gson</artifactId>
 <version>2.8.6</version>
-<scope>compile</scope>
+<scope>implementation</scope>
 </dependency>
 <dependency>
 <groupId>mysql</groupId>
 <artifactId>mysql-connector-java</artifactId>
 <version>8.0.22</version>
-<scope>compile</scope>
+<scope>provided</scope>
 </dependency>
 	<dependency>
 		<groupId>com.jpaulmorrison</groupId>
@@ -57,7 +57,13 @@ John Paul Rodker Morrison (Software architect/developer)
 		<groupId>com.jpaulmorrison</groupId>
 		<artifactId>javafbp</artifactId>
 		<version>4.1.11</version>
-		<scope>compile</scope>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>8.0.22</version>
+		<scope>provided</scope>
 	</dependency>
 </dependencies>
 </project>

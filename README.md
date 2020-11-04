@@ -23,7 +23,9 @@ To run Step300.java from the command line, do a `cd` to position to your `fbp-et
 
 Then enter 
 
-`C:\Users\Paul\Documents\GitHub\fbp-etl\bin\main\java [master ≡ +2 ~5 -1 !]> java -classpath ".;C:\Users\Paul\.m2\repository\com\jpaulmorrison\javafbp\4.1.11\javafbp-4.1.11.jar;C:\Users\Paul\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\Paul\.m2\repository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar;C:\Users\Paul\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;C:\Users\Paul\.m2\repository\com\jpaulmorrison\jbdtypes\1.1.1\jbdtypes-1.1.1.jar" com.jpaulmorrison.Step30.code.networks.Step300`
+`java -classpath ".;C:\Users\Paul\.m2\repository\com\jpaulmorrison\javafbp\4.1.11\javafbp-4.1.11.jar;C:\Users\Paul\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\Paul\.m2\repository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar;C:\Users\Paul\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;C:\Users\Paul\.m2\repository\com\jpaulmorrison\jbdtypes\1.1.1\jbdtypes-1.1.1.jar" com.jpaulmorrison.Step30.code.networks.Step300`
+
+replacing `Paul` by your user name!
 
 Note: some repackaging may be needed to run (protobuf is in mysql jar file)
 

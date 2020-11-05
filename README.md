@@ -19,15 +19,13 @@ If necessary, go into `services.msc`, and restart MySQL.
 
 We will assume your MySQL Connector Java jar file is in your downloads folder. 
 
-To run Step300.java from the command line, do a `cd` to position to your `fbp-etl\main\java` directory. 
+To run Step300.java from the command line, do a `cd` to position to your `fbp-etl\target\classes` directory. 
 
 Then enter 
 
-`java -classpath ".;C:\Users\Paul\.m2\repository\com\jpaulmorrison\javafbp\4.1.11\javafbp-4.1.11.jar;C:\Users\Paul\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\Paul\.m2\repository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar;C:\Users\Paul\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;C:\Users\Paul\.m2\repository\com\jpaulmorrison\jbdtypes\1.1.1\jbdtypes-1.1.1.jar" com.jpaulmorrison.Step30.code.networks.Step300`
+`java -classpath ".;C:\Users\Paul\.m2\repository\com\jpaulmorrison\javafbp\4.1.11\javafbp-4.1.11.jar;C:\Users\Paul\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\Paul\.m2\repository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar;C:\Users\Paul\.m2\repository\com\google\protobuf\protobuf-java\3.11.4\protobuf-java-3.11.4.jar;C:\Users\Paul\.m2\repository\com\jpaulmorrison\jbdtypes\1.1.3\jbdtypes-1.1.3.jar" com/jpaulmorrison/Step30/code/networks/Step300`
 
-replacing `Paul` by your user name!
-
-Note: some repackaging may be needed to run (protobuf is in mysql jar file)
+replacing `Paul` by your user name!   Also you may need to update some of the version numberss - check with Maven.
 
 ### Steps
 

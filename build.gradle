@@ -62,8 +62,8 @@ repositories {
 
 dependencies { 	
 	compileOnly ('com.jpaulmorrison:javafbp:4.1.11')
-	compileOnly ('com.jpaulmorrison:jbdtypes:1.1.1')
-	implementation('mysql:mysql-connector-java:8.0.22')
+	implementation ('com.jpaulmorrison:jbdtypes:1.1.3')
+	compileOnly ('mysql:mysql-connector-java:8.0.22')
  }  
 	
 java {       

@@ -10,7 +10,7 @@ import com.jpaulmorrison.fbp.core.engine.Packet;
 import com.jpaulmorrison.jdbcstuff.resources.layouts.Book;
 import com.jpaulmorrison.jdbcstuff.resources.layouts.Sale;
 
-import jbdtypes.Quantity;
+//import com.jpaulmorrison.jbdtypes.Quantity;
 
 @ComponentDescription("Convert Book into Sale")
 @OutPort("OUT")
@@ -37,9 +37,8 @@ public class BookSale extends Component {
 	    	s.title2 = b.title2;
 	    	s.author2 = b.author2;
 	    	s.price2 = b.price2;
-	    	s.qty2= b.qty2;
-	    	Quantity q = new Quantity(b.qty2);
-	    	s.total2 = b.price2.extend(q);
+	    	s.qty2= b.qty2;	    	
+	    	s.total2 = b.price2.extend(b.qty2);
 	    	outport.send(create(s));
 	    	drop(p);
 	    }

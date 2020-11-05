@@ -17,11 +17,11 @@ The JavaFBP network `Step300` (held in `Step30`) actually reads a table, makes a
 
 If necessary, go into `services.msc`, and restart MySQL.
 
-We will assume your MySQL Connector Java jar file is in your downloads folder. 
+We will assume that the required Maven 'artifacts' are all in the user's `.m2` folder.
 
 To run Step300.java from the command line, first run 
 
-`mvn dependency:purge-local-repository clean install` , 
+`mvn dependency:purge-local-repository clean install`  
 
 then do a `cd` to position to your `fbp-etl\target\classes` directory. 
 

@@ -23,10 +23,6 @@ John Paul Rodker Morrison (Software architect/developer)
 <email>jpaulmorr@gmail.com</email>
 </developer>
 </developers>
-
-  <build>
-    <outputDirectory>bin</outputDirectory>
-  </build>
 <scm>
 <connection>scm:git:git:https://github.com/jpaulm.git</connection>
 <developerConnection>scm:git:ssh:https://github.com/jpaulm.git</developerConnection>

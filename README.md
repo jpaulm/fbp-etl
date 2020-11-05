@@ -19,7 +19,11 @@ If necessary, go into `services.msc`, and restart MySQL.
 
 We will assume your MySQL Connector Java jar file is in your downloads folder. 
 
-To run Step300.java from the command line, do a `cd` to position to your `fbp-etl\target\classes` directory. 
+To run Step300.java from the command line, first run 
+
+`mvn dependency:purge-local-repository clean install` , 
+
+then do a `cd` to position to your `fbp-etl\target\classes` directory. 
 
 Then enter 
 

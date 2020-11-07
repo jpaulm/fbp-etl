@@ -13,7 +13,7 @@ The various phases will be designated `Stepxx`, but the numbers will not necessa
 
 #### Final form (so far): Step30
 
-Unless you want to see in detail how this app evolved, you could probably skip to the last step - Step30.  
+The last step - Step30 - is the wole application.  For diagrams, see https://github.com/jpaulm/fbp-etl/tree/master/src/main/java/com/jpaulmorrison/Step30 .  
 
 This JavaFBP network, `Step300` (held in `Step30`), actually reads a table, makes a simple monetary calculation on each row (see `jbdtypes`), and stores the result back in the table.
 

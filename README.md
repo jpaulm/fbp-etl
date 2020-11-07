@@ -25,7 +25,7 @@ To run Step300.java from the command line, first run
 
 `mvn dependency:purge-local-repository clean install`  
 
-then do a `cd` to position to your `fbp-etl\target\classes` directory. 
+to create and populate the `target\classes` directory,  then do a `cd` to position to your `target\classes` directory. 
 
 Then enter 
 

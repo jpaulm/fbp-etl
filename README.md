@@ -11,13 +11,15 @@ From the point of view of Flow-Based Programming (FBP) there is nothing special 
 
 The various phases will be designated `Stepxx`, but the numbers will not necessarily be consecutive.
 
-#### Running Step300
+#### Final form (so far): Step30
 
-The JavaFBP network `Step300` (held in `Step30`) actually reads a table, makes a simple monetary calculation on each row, and stores the result back in the table.  `Step300` comprises 3 subnets: Extract, Transform, and Load, each of which contains all required parametric information, e.g. table names.  The table password is held in a separate file.
+Unless you want to see in detail how this app evolved, you could probably skip to the last step - Step30.  
 
-If necessary, go into `services.msc`, and restart MySQL.
+This JavaFBP network, `Step300` (held in `Step30`), actually reads a table, makes a simple monetary calculation on each row (see `jbdtypes`), and stores the result back in the table.
 
-We will assume that the required Maven 'artifacts' are all in the user's `.m2` folder.
+`Step300` comprises 3 subnets: Extract, Transform, and Load, each of which contains all required parametric information, e.g. table names.  The table password is held in a separate file.
+
+We will assume that the required Maven artifacts are all in the user's `.m2` folder.
 
 To run Step300.java from the command line, first run 
 
@@ -32,6 +34,8 @@ Then enter
 (actual class name can use periods or slashes...)
 
 replacing `Paul` by your user name!   Also you may need to update some of the version numbers - check with Maven.
+
+If necessary, go into `services.msc`, and restart MySQL.
 
 ### Steps
 

@@ -19,7 +19,7 @@ This JavaFBP network, `Step300` (held in `Step30`), actually reads a table, make
 
 `Step300` comprises 3 subnets: Extract, Transform, and Load, each of which contains all required parametric information, e.g. table names.  The table password is held in a separate file.
 
-To run Step300.java from the command line, enter
+To run Step300.java from the command line, position to your `fbp-etl` directory, then enter
 
 <!-- `mvn dependency:purge-local-repository clean install`  
 

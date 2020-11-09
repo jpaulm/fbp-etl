@@ -19,21 +19,15 @@ This JavaFBP network, `Step300` (held in `Step30`), actually reads a table, make
 
 `Step300` comprises 3 subnets: Extract, Transform, and Load, each of which contains all required parametric information, e.g. table names.  The table password is held in a separate file.
 
-We will assume that the required Maven artifacts are all in the user's `.m2` folder.
+To run Step300.java from the command line, enter
 
-To run Step300.java from the command line, first run 
-
-`mvn dependency:purge-local-repository clean install`  
+<!-- `mvn dependency:purge-local-repository clean install`  
 
 to create and populate the `target\classes` directory,  then do a `cd` to position to your `target\classes` directory. 
 
-Then enter 
+Then enter -->
 
-`java -classpath ".;C:\Users\Paul\.m2\repository\com\jpaulmorrison\javafbp\4.1.11\javafbp-4.1.11.jar;C:\Users\Paul\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\Paul\.m2\repository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar;C:\Users\Paul\.m2\repository\com\jpaulmorrison\jbdtypes\1.1.3\jbdtypes-1.1.3.jar" com.jpaulmorrison.Step30.code.networks.Step300`  
-
-(actual class name can use periods or slashes...)
-
-replacing `Paul` by your user name!   Also you may need to update some of the version numbers - check with Maven.
+`java -jar "build/libs/fbp-etl-1.1.0.jar"`  
 
 If necessary, go into `services.msc`, and restart MySQL.
 

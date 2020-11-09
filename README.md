@@ -11,7 +11,7 @@ From the point of view of Flow-Based Programming (FBP) there is nothing special 
 
 The various phases will be designated `Stepxx`, but the numbers will not necessarily be consecutive.
 
-#### Final form (so far): Step30
+#### Final form: Step30
 
 The last step - Step30 - is the wole application.  For diagrams, see https://github.com/jpaulm/fbp-etl/tree/master/src/main/java/com/jpaulmorrison/Step30 .  
 

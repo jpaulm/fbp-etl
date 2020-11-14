@@ -45,7 +45,7 @@ If necessary, go into `services.msc`, and restart MySQL.
 
 [Step15 - Adding customized data types](src/main/java/com/jpaulmorrison/Step15/)
 
-**Note:** at this point (Step15), the data was changed to contain currency indications, as per https://github.com/jpaulm/jbdtypes , so to run earlier steps, the data table prices will have to be changed back to simple integers.scalars.
+**Note:** at this point (Step15), the data was changed to contain currency indications, as per https://github.com/jpaulm/jbdtypes , so to run earlier steps, the data table prices will have to be changed back to simple integers.
 
 [Step20 - Develop WriteJDBC and start "Two Level" Structuring](src/main/java/com/jpaulmorrison/Step20/)
 

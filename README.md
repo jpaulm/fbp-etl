@@ -31,6 +31,11 @@ Then enter -->
 
 If necessary, go into `services.msc`, and restart MySQL.
 
+JavaFBP tracing
+------
+Since this application uses JavaFBP, JavaFBP tracing is controlled by the `JavaFBPProperties.xml` file in your `<user>` directory.
+
+
 ### Steps
 
 [Step05 - First phase - little externalization](src/main/java/com/jpaulmorrison/Step05/)

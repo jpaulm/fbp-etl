@@ -19,17 +19,38 @@ This JavaFBP network, `Step300` (held in `Step30`), actually reads a table, make
 
 `Step300` comprises 3 subnets: Extract, Transform, and Load, each of which contains all required parametric information, e.g. table names.  The table password is held in a separate file.
 
-To run Step300.java from the command line, position to your `fbp-etl` directory, then enter
+This project is "evolutionary", so I have not put it up on Maven.  The simplest procedure is to install it as a project on Eclipse, and explore the various folders, especially `Step300`.
 
-<!-- `mvn dependency:purge-local-repository clean install`  
+To run `Step300.java` from the command line, start DOS, then position to your `GitHub\fbp-etl` directory, then run `gradle build`, then go to your `build\libs` folder, then enter  
 
-to create and populate the `target\classes` directory,  then do a `cd` to position to your `target\classes` directory. 
-
-Then enter -->
-
-`java -jar "build/libs/fbp-etl-1.1.0.jar"`  
+      java -jar "build/libs/fbp-etl-1.1.0.jar"  
 
 If necessary, go into `services.msc`, and restart MySQL.
+
+You should see the following output:
+
+```
+  The SQL statement is: "select * from books"
+
+Total number of records = 5
+The SQL statement is: "delete from sales"
+
+5 records deleted.
+
+The SQL statement is: insert into sales(total,author,price,qty,id,title)  values("CAD122.21","Tan Ah Teck","CAD11.11","11","1001","Java for dummies")
+
+The SQL statement is: insert into sales(total,author,price,qty,id,title)  values("CAD488.84","Tan Ah Teck","CAD22.22","22","1002","More Java for dummies")
+
+The SQL statement is: insert into sales(total,author,price,qty,id,title)  values("CAD1099.89","Mohammad Ali","CAD33.33","33","1003","More Java for more dummies")
+
+The SQL statement is: insert into sales(total,author,price,qty,id,title)  values("CAD1955.36","Kumar","CAD44.44","44","1004","A Cup of Java")
+
+The SQL statement is: insert into sales(total,author,price,qty,id,title)  values("CAD3055.25","Kevin Jones","CAD55.55","55","1005","A Teaspoon of Java")
+
+Total number of records = 0
+Run complete.  Time: 0.509 seconds
+Counts: C: 12, D: 26, S: 32, R (non-null): 48, DO: 0
+```
 
 JavaFBP tracing
 ------

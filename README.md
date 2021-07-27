@@ -11,6 +11,15 @@ From the point of view of Flow-Based Programming (FBP) there is nothing special 
 
 The various phases will be designated `Stepxx`, but the numbers will not necessarily be consecutive.
 
+Business Data Types
+---
+You may notice that the layouts in https://github.com/jpaulm/fbp-etl/tree/master/src/main/java/com/jpaulmorrison/jdbcstuff/resources/layouts use data types like `MPrice` and `Quantity` - these are defined in a jar file - currently `jbdtypes-1.1.3.jar` , which is on Maven.  
+
+The component `https://github.com/jpaulm/fbp-etl/blob/master/src/main/java/com/jpaulmorrison/jdbcstuff/core/components/BookSale.java` uses the `extend` method to calculate a `Monetary` total in the `Sale` object.  This is in keeping with our philosophy that business figures should be actual business types, rather than being just `int`s or `float`s.
+
+You can find the `jbdtypes` repo on Maven, by linking to `https://search.maven.org/artifact/com.jpaulmorrison/jbdtypes`.
+
+
 #### Final form: Step30
 
 The last step - Step30 - is the whole application.  For diagrams, see https://github.com/jpaulm/fbp-etl/tree/master/src/main/java/com/jpaulmorrison/Step30 .  

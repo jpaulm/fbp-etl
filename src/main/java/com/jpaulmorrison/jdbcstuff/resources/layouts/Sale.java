@@ -1,5 +1,12 @@
 package com.jpaulmorrison.jdbcstuff.resources.layouts;
 
+/*******************************************************************************************
+*                                                                                          *
+* 'jbdtypes' is Java Business Data Types - get jar file from Maven (search for jbdtypes)   *
+*                                                                                          *
+*******************************************************************************************/
+
+
 import com.jpaulmorrison.jbdtypes.MPrice;
 import com.jpaulmorrison.jbdtypes.Monetary;
 import com.jpaulmorrison.jbdtypes.Quantity;

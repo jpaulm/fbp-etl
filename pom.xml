@@ -32,7 +32,7 @@ John Paul Rodker Morrison (Software architect/developer)
 	<dependency>
 		<groupId>com.jpaulmorrison</groupId>
 		<artifactId>javafbp</artifactId>
-		<version>4.1.12</version>
+		<version>4.1.13</version>
 	</dependency>
 	<dependency>
 		<groupId>com.google.code.gson</groupId>
